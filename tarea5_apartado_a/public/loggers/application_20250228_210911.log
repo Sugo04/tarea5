@@ -1,0 +1,218 @@
+2025-02-28 21:09:11.969 [main] INFO  ad.hibernate.hmarort.Main - Iniciando aplicación de gestión de pedidos
+2025-02-28 21:09:11.973 [main] INFO  ad.hibernate.hmarort.Main - Interfaz seleccionada: automatica
+2025-02-28 21:09:11.991 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-02-28 21:09:12.123 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@176b75f7
+2025-02-28 21:09:12.125 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-02-28 21:09:12.125 [main] INFO  a.h.h.database_config.SQLiteConfig - Iniciando inicialización de base de datos SQLite
+2025-02-28 21:09:12.145 [main] WARN  a.h.h.database_config.SQLiteConfig - Advertencia al ejecutar statement: [SQLITE_ERROR] SQL error or missing database (table Zonas_Envio already exists)
+2025-02-28 21:09:12.145 [main] WARN  a.h.h.database_config.SQLiteConfig - Advertencia al ejecutar statement: [SQLITE_CONSTRAINT_PRIMARYKEY] A PRIMARY KEY constraint failed (UNIQUE constraint failed: Zonas_Envio.id_zona)
+2025-02-28 21:09:12.147 [main] WARN  a.h.h.database_config.SQLiteConfig - Advertencia al ejecutar statement: [SQLITE_CONSTRAINT_PRIMARYKEY] A PRIMARY KEY constraint failed (UNIQUE constraint failed: Clientes.id_cliente)
+2025-02-28 21:09:12.147 [main] INFO  a.h.h.database_config.SQLiteConfig - Base de datos inicializada correctamente
+2025-02-28 21:09:12.150 [main] INFO  a.h.hmarort.utils.SessionManager - Inicializando SessionFactory de Hibernate
+2025-02-28 21:09:12.236 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-02-28 21:09:12.486 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-02-28 21:09:12.573 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-02-28 21:09:12.573 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.sqlite.JDBC
+2025-02-28 21:09:12.573 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:sqlite:src/main/resources/pedidos.db]
+2025-02-28 21:09:12.573 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {}
+2025-02-28 21:09:12.575 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2025-02-28 21:09:12.577 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 20 (min=1)
+2025-02-28 21:09:13.569 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5763a655] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2025-02-28 21:09:13.580 [main] INFO  a.h.hmarort.utils.SessionManager - SessionFactory inicializada correctamente
+2025-02-28 21:09:13.581 [main] INFO  a.h.hmarort.factory.DAOFactory - DAOFactory inicializado correctamente
+2025-02-28 21:09:13.582 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - [GENERACIÓN AUTOMÁTICA DE DATOS]
+2025-02-28 21:09:13.667 [main] INFO  a.h.h.d.i.DAOZonaEnvioImpl - Zona de envío insertada con ID: 18
+2025-02-28 21:09:13.681 [main] INFO  a.h.h.d.i.DAOZonaEnvioImpl - Zona de envío insertada con ID: 19
+2025-02-28 21:09:13.684 [main] INFO  a.h.h.d.i.DAOZonaEnvioImpl - Zona de envío insertada con ID: 20
+2025-02-28 21:09:13.686 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - ✓ Zonas de envío generadas
+2025-02-28 21:09:13.691 [main] INFO  a.h.h.d.i.DAOClienteImpl - Cliente insertado con ID: 30
+2025-02-28 21:09:13.693 [main] INFO  a.h.h.d.i.DAOClienteImpl - Cliente insertado con ID: 31
+2025-02-28 21:09:13.695 [main] INFO  a.h.h.d.i.DAOClienteImpl - Cliente insertado con ID: 32
+2025-02-28 21:09:13.698 [main] INFO  a.h.h.d.i.DAOClienteImpl - Cliente insertado con ID: 33
+2025-02-28 21:09:13.699 [main] INFO  a.h.h.d.i.DAOClienteImpl - Cliente insertado con ID: 34
+2025-02-28 21:09:13.699 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - ✓ Clientes generados
+2025-02-28 21:09:13.701 [main] INFO  a.h.h.d.implementacion.DAOPedidoImpl - Pedido insertado con ID: 47
+2025-02-28 21:09:13.706 [main] INFO  a.h.h.d.implementacion.DAOPedidoImpl - Pedido insertado con ID: 48
+2025-02-28 21:09:13.708 [main] INFO  a.h.h.d.implementacion.DAOPedidoImpl - Pedido insertado con ID: 49
+2025-02-28 21:09:13.711 [main] INFO  a.h.h.d.implementacion.DAOPedidoImpl - Pedido insertado con ID: 50
+2025-02-28 21:09:13.713 [main] INFO  a.h.h.d.implementacion.DAOPedidoImpl - Pedido insertado con ID: 51
+2025-02-28 21:09:13.715 [main] INFO  a.h.h.d.implementacion.DAOPedidoImpl - Pedido insertado con ID: 52
+2025-02-28 21:09:13.719 [main] INFO  a.h.h.d.implementacion.DAOPedidoImpl - Pedido insertado con ID: 53
+2025-02-28 21:09:13.722 [main] INFO  a.h.h.d.implementacion.DAOPedidoImpl - Pedido insertado con ID: 54
+2025-02-28 21:09:13.724 [main] INFO  a.h.h.d.implementacion.DAOPedidoImpl - Pedido insertado con ID: 55
+2025-02-28 21:09:13.726 [main] INFO  a.h.h.d.implementacion.DAOPedidoImpl - Pedido insertado con ID: 56
+2025-02-28 21:09:13.731 [main] INFO  a.h.h.d.implementacion.DAOPedidoImpl - Pedido insertado con ID: 57
+2025-02-28 21:09:13.733 [main] INFO  a.h.h.d.implementacion.DAOPedidoImpl - Pedido insertado con ID: 58
+2025-02-28 21:09:13.734 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - ✓ Pedidos generados
+2025-02-28 21:09:13.734 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - [INFORME AUTOMÁTICO]
+2025-02-28 21:09:14.069 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 21:09:14.070 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Nombre: Ana López
+2025-02-28 21:09:14.070 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Pedidos: 0
+2025-02-28 21:09:14.070 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Facturado: 0.0 €
+2025-02-28 21:09:14.073 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 21:09:14.073 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Nombre: Carlos Pérez
+2025-02-28 21:09:14.074 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Pedidos: 0
+2025-02-28 21:09:14.074 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Facturado: 0.0 €
+2025-02-28 21:09:14.077 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 21:09:14.077 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Nombre: Beatriz Gómez
+2025-02-28 21:09:14.078 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Pedidos: 0
+2025-02-28 21:09:14.078 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Facturado: 0.0 €
+2025-02-28 21:09:14.080 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 21:09:14.080 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Nombre: David Martín
+2025-02-28 21:09:14.080 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Pedidos: 0
+2025-02-28 21:09:14.080 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Facturado: 0.0 €
+2025-02-28 21:09:14.086 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 21:09:14.086 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Nombre: Cliente 1
+2025-02-28 21:09:14.086 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Pedidos: 3
+2025-02-28 21:09:14.086 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Facturado: 872.9974778284542 €
+2025-02-28 21:09:14.090 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 21:09:14.090 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Nombre: Cliente 2
+2025-02-28 21:09:14.091 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Pedidos: 1
+2025-02-28 21:09:14.091 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Facturado: 217.23928563416982 €
+2025-02-28 21:09:14.093 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 21:09:14.094 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Nombre: Cliente 3
+2025-02-28 21:09:14.094 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Pedidos: 1
+2025-02-28 21:09:14.094 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Facturado: 436.32669381958056 €
+2025-02-28 21:09:14.095 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 21:09:14.095 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Nombre: Cliente 4
+2025-02-28 21:09:14.097 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Pedidos: 1
+2025-02-28 21:09:14.097 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Facturado: 340.1137639595107 €
+2025-02-28 21:09:14.098 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 21:09:14.099 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Nombre: Cliente 5
+2025-02-28 21:09:14.099 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Pedidos: 2
+2025-02-28 21:09:14.099 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Facturado: 440.70952523320324 €
+2025-02-28 21:09:14.099 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 21:09:14.099 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Nombre: Cliente 1
+2025-02-28 21:09:14.099 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Pedidos: 1
+2025-02-28 21:09:14.101 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Facturado: 464.84821205111365 €
+2025-02-28 21:09:14.102 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 21:09:14.102 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Nombre: Cliente 2
+2025-02-28 21:09:14.103 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Pedidos: 3
+2025-02-28 21:09:14.103 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Facturado: 1031.591605198616 €
+2025-02-28 21:09:14.106 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 21:09:14.106 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Nombre: Cliente 3
+2025-02-28 21:09:14.106 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Pedidos: 2
+2025-02-28 21:09:14.107 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Facturado: 444.00507994121693 €
+2025-02-28 21:09:14.109 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 21:09:14.109 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Nombre: Cliente 4
+2025-02-28 21:09:14.109 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Pedidos: 1
+2025-02-28 21:09:14.109 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Facturado: 144.31905871804076 €
+2025-02-28 21:09:14.112 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 21:09:14.112 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Nombre: Cliente 5
+2025-02-28 21:09:14.112 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Pedidos: 2
+2025-02-28 21:09:14.112 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Facturado: 592.2956619841248 €
+2025-02-28 21:09:14.114 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 21:09:14.114 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Nombre: Cliente 1
+2025-02-28 21:09:14.114 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Pedidos: 2
+2025-02-28 21:09:14.114 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Facturado: 797.6658606320591 €
+2025-02-28 21:09:14.116 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 21:09:14.116 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Nombre: Cliente 2
+2025-02-28 21:09:14.116 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Pedidos: 2
+2025-02-28 21:09:14.116 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Facturado: 536.4934323393645 €
+2025-02-28 21:09:14.119 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 21:09:14.119 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Nombre: Cliente 3
+2025-02-28 21:09:14.119 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Pedidos: 2
+2025-02-28 21:09:14.119 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Facturado: 501.50750581971636 €
+2025-02-28 21:09:14.121 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 21:09:14.123 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Nombre: Cliente 4
+2025-02-28 21:09:14.123 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Pedidos: 3
+2025-02-28 21:09:14.123 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Facturado: 1040.50291115565 €
+2025-02-28 21:09:14.126 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 21:09:14.127 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Nombre: Cliente 5
+2025-02-28 21:09:14.127 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Pedidos: 3
+2025-02-28 21:09:14.127 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Facturado: 747.1969651446059 €
+2025-02-28 21:09:14.132 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 21:09:14.132 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Nombre: Cliente 1
+2025-02-28 21:09:14.132 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Pedidos: 2
+2025-02-28 21:09:14.132 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Facturado: 835.1339974346707 €
+2025-02-28 21:09:14.136 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 21:09:14.136 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Nombre: Cliente 2
+2025-02-28 21:09:14.136 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Pedidos: 3
+2025-02-28 21:09:14.136 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Facturado: 740.2157132241723 €
+2025-02-28 21:09:14.138 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 21:09:14.139 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Nombre: Cliente 3
+2025-02-28 21:09:14.139 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Pedidos: 1
+2025-02-28 21:09:14.139 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Facturado: 300.56424074188715 €
+2025-02-28 21:09:14.143 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 21:09:14.143 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Nombre: Cliente 4
+2025-02-28 21:09:14.144 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Pedidos: 3
+2025-02-28 21:09:14.144 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Facturado: 755.2083138168507 €
+2025-02-28 21:09:14.147 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 21:09:14.148 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Nombre: Cliente 5
+2025-02-28 21:09:14.150 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Pedidos: 1
+2025-02-28 21:09:14.151 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Facturado: 121.75967617185849 €
+2025-02-28 21:09:14.156 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 21:09:14.156 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Nombre: Cliente 1
+2025-02-28 21:09:14.156 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Pedidos: 1
+2025-02-28 21:09:14.156 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Facturado: 323.4100804944039 €
+2025-02-28 21:09:14.160 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 21:09:14.160 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Nombre: Cliente 2
+2025-02-28 21:09:14.160 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Pedidos: 3
+2025-02-28 21:09:14.160 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Facturado: 996.0413642031737 €
+2025-02-28 21:09:14.163 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 21:09:14.163 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Nombre: Cliente 3
+2025-02-28 21:09:14.163 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Pedidos: 1
+2025-02-28 21:09:14.165 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Facturado: 273.1675092122359 €
+2025-02-28 21:09:14.166 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 21:09:14.167 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Nombre: Cliente 4
+2025-02-28 21:09:14.167 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Pedidos: 1
+2025-02-28 21:09:14.167 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Facturado: 170.8256468339958 €
+2025-02-28 21:09:14.172 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 21:09:14.172 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Nombre: Cliente 5
+2025-02-28 21:09:14.173 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Pedidos: 1
+2025-02-28 21:09:14.173 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Facturado: 126.88717947436203 €
+2025-02-28 21:09:14.175 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 21:09:14.175 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Nombre: Cliente 1
+2025-02-28 21:09:14.175 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Pedidos: 2
+2025-02-28 21:09:14.175 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Facturado: 343.3631957132724 €
+2025-02-28 21:09:14.178 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 21:09:14.178 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Nombre: Cliente 2
+2025-02-28 21:09:14.178 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Pedidos: 3
+2025-02-28 21:09:14.179 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Facturado: 915.9904588224107 €
+2025-02-28 21:09:14.180 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 21:09:14.180 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Nombre: Cliente 3
+2025-02-28 21:09:14.180 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Pedidos: 3
+2025-02-28 21:09:14.180 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Facturado: 803.4214836601061 €
+2025-02-28 21:09:14.183 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 21:09:14.183 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Nombre: Cliente 4
+2025-02-28 21:09:14.184 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Pedidos: 1
+2025-02-28 21:09:14.184 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Facturado: 251.60958035530464 €
+2025-02-28 21:09:14.186 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 21:09:14.186 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Nombre: Cliente 5
+2025-02-28 21:09:14.186 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Pedidos: 3
+2025-02-28 21:09:14.187 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - Total Facturado: 644.6083302954635 €
+2025-02-28 21:09:14.187 [main] INFO  ad.hibernate.hmarort.Main - Aplicación finalizada exitosamente

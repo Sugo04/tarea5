@@ -1,0 +1,20 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Auto Mode Debug",
+            "request": "launch",
+            "mainClass": "ad.hibernate.hmarort.Main",
+            "projectName": "tarea5_apartado_a"
+        },
+        {
+            "type": "java",
+            "name": "Manual Mode Debug",
+            "request": "launch",
+            "mainClass": "ad.hibernate.hmarort.Main",
+            "projectName": "tarea5_apartado_a",
+            "args": ["manual"]
+        }
+    ]
+}

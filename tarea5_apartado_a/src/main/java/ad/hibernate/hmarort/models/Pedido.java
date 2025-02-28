@@ -1,125 +1,151 @@
 package ad.hibernate.hmarort.models;
 
+import jakarta.persistence.*;
 import java.time.LocalDate;
-import javax.persistence.*;
 
+/**
+ * Clase que representa un pedido en la base de datos.
+ */
 @Entity
-@Table(name = "pedidos")
+@Table(name = "Pedidos")
 public class Pedido {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    @Column(name = "id_pedido")
+    private int idPedido; // Identificador único del pedido
     
-    @Column(name = "fecha")
-    private LocalDate fecha;
+    @Column(name = "fecha", nullable = false)
+    private LocalDate fecha; // Fecha en que se realizó el pedido
     
-    @Column(name = "importe")
-    private double importe;
+    @Column(name = "importe_total", nullable = false)
+    private double importeTotal; // Importe total del pedido
     
-    @Column(name = "id_cliente")
-    private int idCliente;
-    
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_cliente", insertable = false, updatable = false)
-    private Cliente cliente;
+    @Column(name = "id_cliente", nullable = false)
+    private int idCliente; // ID del cliente que realizó el pedido
 
     /**
-     * Constructor por defecto.
+     * Constructor completo para la clase Pedido.
+     *
+     * @param idPedido      Identificador único del pedido
+     * @param fecha         Fecha en que se realizó el pedido
+     * @param importeTotal  Importe total del pedido
+     * @param idCliente     ID del cliente que realizó el pedido
+     */
+    public Pedido(int idPedido, LocalDate fecha, double importeTotal, int idCliente) {
+        this.idPedido = idPedido;
+        this.fecha = fecha;
+        this.importeTotal = importeTotal;
+        this.idCliente = idCliente;
+    }
+
+    /**
+     * Constructor vacío para la clase Pedido.
      */
     public Pedido() {
     }
 
     /**
-     *  Constructor con parámetros.
-     * @param id
-     * @param fecha
-     * @param importe
-     * @param idCliente
+     * Obtiene el identificador del pedido.
+     *
+     * @return Identificador del pedido
      */
-    public Pedido(int id, LocalDate fecha, double importe, int idCliente) {
-        this.id = id;
-        this.fecha = fecha;
-        this.importe = importe;
-        this.idCliente = idCliente;
+    public int getIdPedido() {
+        return idPedido;
     }
 
     /**
-     * Devuelve el id del pedido.
-     * @return
+     * Establece el identificador del pedido.
+     *
+     * @param idPedido Nuevo identificador del pedido
      */
-    public int getId() {
-        return id;
+    public void setIdPedido(int idPedido) {
+        this.idPedido = idPedido;
     }
 
     /**
-     * Establece el id del pedido.
-     * @param id
-     */
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    /**
-     * Devuelve la fecha del pedido.
-     * @return
+     * Obtiene la fecha en que se realizó el pedido.
+     *
+     * @return Fecha del pedido
      */
     public LocalDate getFecha() {
         return fecha;
     }
 
     /**
-     * Establece la fecha del pedido.
-     * @param fecha
+     * Establece la fecha en que se realizó el pedido.
+     *
+     * @param fecha Nueva fecha del pedido
+     * @throws IllegalArgumentException Si la fecha es nula o futura
      */
     public void setFecha(LocalDate fecha) {
+        if (fecha == null) {
+            throw new IllegalArgumentException("La fecha no puede ser nula");
+        }
+        if (fecha.isAfter(LocalDate.now())) {
+            throw new IllegalArgumentException("La fecha no puede ser futura");
+        }
         this.fecha = fecha;
     }
 
     /**
-     * Devuelve el importe del pedido.
-     * @return
+     * Obtiene el importe total del pedido.
+     *
+     * @return Importe total del pedido
      */
-    public double getImporte() {
-        return importe;
+    public double getImporteTotal() {
+        return importeTotal;
     }
 
     /**
-     * Establece el importe del pedido.
-     * @param importe
+     * Establece el importe total del pedido.
+     *
+     * @param importeTotal Nuevo importe total del pedido
+     * @throws IllegalArgumentException Si el importe es negativo o excede el máximo permitido
      */
-    public void setImporte(double importe) {
-        this.importe = importe;
+    public void setImporteTotal(double importeTotal) {
+        if (importeTotal < 0) {
+            throw new IllegalArgumentException("El importe no puede ser negativo");
+        }
+        if (importeTotal > 999999.99) {
+            throw new IllegalArgumentException("El importe excede el máximo permitido");
+        }
+        this.importeTotal = importeTotal;
     }
-    
+
     /**
-     * Devuelve el id del cliente asociado al pedido.
-     * @return
+     * Obtiene el ID del cliente que realizó el pedido.
+     *
+     * @return ID del cliente
      */
     public int getIdCliente() {
         return idCliente;
     }
 
     /**
-     * Establece el id del cliente asociado al pedido.
-     * @param idCliente
+     * Establece el ID del cliente que realizó el pedido.
+     *
+     * @param idCliente Nuevo ID del cliente
+     * @throws IllegalArgumentException Si el ID es no positivo
      */
     public void setIdCliente(int idCliente) {
+        if (idCliente <= 0) {
+            throw new IllegalArgumentException("El ID de cliente debe ser positivo");
+        }
         this.idCliente = idCliente;
-    }
-    
-    /**
-     * Devuelve el cliente asociado al pedido.
-     * @return
-     */
-    public Cliente getCliente() {
-        return cliente;
     }
 
     /**
-     * Establece el cliente asociado al pedido.
-     * @param cliente
+     * Devuelve una representación en cadena del objeto Pedido.
+     *
+     * @return Cadena que representa al objeto Pedido
      */
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
+    @Override
+    public String toString() {
+        return "Pedido{" +
+                "idPedido=" + idPedido +
+                ", fecha=" + fecha +
+                ", importeTotal=" + importeTotal +
+                ", idCliente=" + idCliente +
+                '}';
     }
 }

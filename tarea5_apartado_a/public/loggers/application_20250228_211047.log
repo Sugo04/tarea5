@@ -1,0 +1,23 @@
+2025-02-28 21:10:47.177 [main] INFO  ad.hibernate.hmarort.Main - Iniciando aplicación de gestión de pedidos
+2025-02-28 21:10:47.182 [main] INFO  ad.hibernate.hmarort.Main - Interfaz seleccionada: manual
+2025-02-28 21:10:47.199 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-02-28 21:10:47.325 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@5965be2d
+2025-02-28 21:10:47.327 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-02-28 21:10:47.328 [main] INFO  a.h.h.database_config.SQLiteConfig - Iniciando inicialización de base de datos SQLite
+2025-02-28 21:10:47.348 [main] WARN  a.h.h.database_config.SQLiteConfig - Advertencia al ejecutar statement: [SQLITE_ERROR] SQL error or missing database (table Zonas_Envio already exists)
+2025-02-28 21:10:47.349 [main] WARN  a.h.h.database_config.SQLiteConfig - Advertencia al ejecutar statement: [SQLITE_CONSTRAINT_PRIMARYKEY] A PRIMARY KEY constraint failed (UNIQUE constraint failed: Zonas_Envio.id_zona)
+2025-02-28 21:10:47.349 [main] WARN  a.h.h.database_config.SQLiteConfig - Advertencia al ejecutar statement: [SQLITE_CONSTRAINT_PRIMARYKEY] A PRIMARY KEY constraint failed (UNIQUE constraint failed: Clientes.id_cliente)
+2025-02-28 21:10:47.349 [main] INFO  a.h.h.database_config.SQLiteConfig - Base de datos inicializada correctamente
+2025-02-28 21:10:47.351 [main] INFO  a.h.hmarort.utils.SessionManager - Inicializando SessionFactory de Hibernate
+2025-02-28 21:10:47.427 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-02-28 21:10:47.643 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-02-28 21:10:47.721 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-02-28 21:10:47.722 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.sqlite.JDBC
+2025-02-28 21:10:47.722 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:sqlite:src/main/resources/pedidos.db]
+2025-02-28 21:10:47.722 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {}
+2025-02-28 21:10:47.722 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2025-02-28 21:10:47.725 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 20 (min=1)
+2025-02-28 21:10:48.664 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@40c8067] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2025-02-28 21:10:48.675 [main] INFO  a.h.hmarort.utils.SessionManager - SessionFactory inicializada correctamente
+2025-02-28 21:10:48.676 [main] INFO  a.h.hmarort.factory.DAOFactory - DAOFactory inicializado correctamente
+2025-02-28 21:11:20.517 [main] INFO  ad.hibernate.hmarort.Main - Aplicación finalizada exitosamente

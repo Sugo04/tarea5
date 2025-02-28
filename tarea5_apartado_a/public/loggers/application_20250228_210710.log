@@ -1,0 +1,195 @@
+2025-02-28 21:07:10.595 [main] INFO  ad.hibernate.hmarort.Main - Iniciando aplicación de gestión de pedidos
+2025-02-28 21:07:10.600 [main] INFO  ad.hibernate.hmarort.Main - Interfaz seleccionada: automatica
+2025-02-28 21:07:10.619 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-02-28 21:07:10.753 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@176b75f7
+2025-02-28 21:07:10.754 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-02-28 21:07:10.754 [main] INFO  a.h.h.database_config.SQLiteConfig - Iniciando inicialización de base de datos SQLite
+2025-02-28 21:07:10.774 [main] WARN  a.h.h.database_config.SQLiteConfig - Advertencia al ejecutar statement: [SQLITE_ERROR] SQL error or missing database (table Zonas_Envio already exists)
+2025-02-28 21:07:10.775 [main] WARN  a.h.h.database_config.SQLiteConfig - Advertencia al ejecutar statement: [SQLITE_CONSTRAINT_PRIMARYKEY] A PRIMARY KEY constraint failed (UNIQUE constraint failed: Zonas_Envio.id_zona)
+2025-02-28 21:07:10.776 [main] WARN  a.h.h.database_config.SQLiteConfig - Advertencia al ejecutar statement: [SQLITE_CONSTRAINT_PRIMARYKEY] A PRIMARY KEY constraint failed (UNIQUE constraint failed: Clientes.id_cliente)
+2025-02-28 21:07:10.776 [main] INFO  a.h.h.database_config.SQLiteConfig - Base de datos inicializada correctamente
+2025-02-28 21:07:10.779 [main] INFO  a.h.hmarort.utils.SessionManager - Inicializando SessionFactory de Hibernate
+2025-02-28 21:07:10.859 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-02-28 21:07:11.099 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-02-28 21:07:11.190 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-02-28 21:07:11.191 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.sqlite.JDBC
+2025-02-28 21:07:11.191 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:sqlite:src/main/resources/pedidos.db]
+2025-02-28 21:07:11.191 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {}
+2025-02-28 21:07:11.191 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2025-02-28 21:07:11.195 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 20 (min=1)
+2025-02-28 21:07:12.234 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5763a655] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2025-02-28 21:07:12.246 [main] INFO  a.h.hmarort.utils.SessionManager - SessionFactory inicializada correctamente
+2025-02-28 21:07:12.248 [main] INFO  a.h.hmarort.factory.DAOFactory - DAOFactory inicializado correctamente
+2025-02-28 21:07:12.248 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - [GENERACIÓN AUTOMÁTICA DE DATOS]
+2025-02-28 21:07:12.345 [main] INFO  a.h.h.d.i.DAOZonaEnvioImpl - Zona de envío insertada con ID: 15
+2025-02-28 21:07:12.360 [main] INFO  a.h.h.d.i.DAOZonaEnvioImpl - Zona de envío insertada con ID: 16
+2025-02-28 21:07:12.362 [main] INFO  a.h.h.d.i.DAOZonaEnvioImpl - Zona de envío insertada con ID: 17
+2025-02-28 21:07:12.365 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - ✓ Zonas de envío generadas
+2025-02-28 21:07:12.369 [main] INFO  a.h.h.d.i.DAOClienteImpl - Cliente insertado con ID: 25
+2025-02-28 21:07:12.371 [main] INFO  a.h.h.d.i.DAOClienteImpl - Cliente insertado con ID: 26
+2025-02-28 21:07:12.373 [main] INFO  a.h.h.d.i.DAOClienteImpl - Cliente insertado con ID: 27
+2025-02-28 21:07:12.375 [main] INFO  a.h.h.d.i.DAOClienteImpl - Cliente insertado con ID: 28
+2025-02-28 21:07:12.377 [main] INFO  a.h.h.d.i.DAOClienteImpl - Cliente insertado con ID: 29
+2025-02-28 21:07:12.377 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - ✓ Clientes generados
+2025-02-28 21:07:12.379 [main] INFO  a.h.h.d.implementacion.DAOPedidoImpl - Pedido insertado con ID: 40
+2025-02-28 21:07:12.383 [main] INFO  a.h.h.d.implementacion.DAOPedidoImpl - Pedido insertado con ID: 41
+2025-02-28 21:07:12.387 [main] INFO  a.h.h.d.implementacion.DAOPedidoImpl - Pedido insertado con ID: 42
+2025-02-28 21:07:12.388 [main] INFO  a.h.h.d.implementacion.DAOPedidoImpl - Pedido insertado con ID: 43
+2025-02-28 21:07:12.392 [main] INFO  a.h.h.d.implementacion.DAOPedidoImpl - Pedido insertado con ID: 44
+2025-02-28 21:07:12.393 [main] INFO  a.h.h.d.implementacion.DAOPedidoImpl - Pedido insertado con ID: 45
+2025-02-28 21:07:12.396 [main] INFO  a.h.h.d.implementacion.DAOPedidoImpl - Pedido insertado con ID: 46
+2025-02-28 21:07:12.398 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - ✓ Pedidos generados
+2025-02-28 21:07:12.398 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - [INFORME AUTOMÁTICO]
+2025-02-28 21:07:12.691 [main] INFO  a.h.hmarort.utils.HibernateUtil - Inicializando SessionFactory de Hibernate
+2025-02-28 21:07:12.716 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-02-28 21:07:12.720 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-02-28 21:07:12.721 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.sqlite.JDBC
+2025-02-28 21:07:12.721 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:sqlite:src/main/resources/pedidos.db]
+2025-02-28 21:07:12.721 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {}
+2025-02-28 21:07:12.722 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2025-02-28 21:07:12.722 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 20 (min=1)
+2025-02-28 21:07:12.793 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1b98355f] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2025-02-28 21:07:12.797 [main] INFO  a.h.hmarort.utils.HibernateUtil - SessionFactory inicializada correctamente
+2025-02-28 21:07:12.854 [main] ERROR a.h.h.d.i.DAOClienteImpl - Error al calcular la facturación total del cliente con ID: 1
+java.lang.IllegalArgumentException: org.hibernate.query.sqm.UnknownPathException: Could not resolve attribute 'total' of 'ad.hibernate.hmarort.models.Pedido' [SELECT SUM(p.total) FROM Pedido p WHERE p.cliente.id = :idCliente]
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:143)
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:167)
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:173)
+	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:827)
+	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:133)
+	at ad.hibernate.hmarort.dao.implementacion.DAOClienteImpl.calcularFacturacionTotalCliente(DAOClienteImpl.java:158)
+	at ad.hibernate.hmarort.ui.UIAutoImpl.generarInformesAutomaticos(UIAutoImpl.java:115)
+	at ad.hibernate.hmarort.ui.UIAutoImpl.iniciar(UIAutoImpl.java:61)
+	at ad.hibernate.hmarort.Main.main(Main.java:42)
+Caused by: org.hibernate.query.sqm.UnknownPathException: Could not resolve attribute 'total' of 'ad.hibernate.hmarort.models.Pedido' [SELECT SUM(p.total) FROM Pedido p WHERE p.cliente.id = :idCliente]
+	at org.hibernate.query.hql.internal.StandardHqlTranslator.translate(StandardHqlTranslator.java:87)
+	at org.hibernate.query.internal.QueryInterpretationCacheStandardImpl.createHqlInterpretation(QueryInterpretationCacheStandardImpl.java:165)
+	at org.hibernate.query.internal.QueryInterpretationCacheStandardImpl.resolveHqlInterpretation(QueryInterpretationCacheStandardImpl.java:147)
+	at org.hibernate.internal.AbstractSharedSessionContract.interpretHql(AbstractSharedSessionContract.java:769)
+	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:819)
+	... 5 common frames omitted
+Caused by: org.hibernate.query.sqm.PathElementException: Could not resolve attribute 'total' of 'ad.hibernate.hmarort.models.Pedido'
+	at org.hibernate.query.sqm.SqmPathSource.getSubPathSource(SqmPathSource.java:95)
+	at org.hibernate.query.sqm.tree.domain.AbstractSqmPath.get(AbstractSqmPath.java:203)
+	at org.hibernate.query.sqm.tree.domain.AbstractSqmFrom.resolvePathPart(AbstractSqmFrom.java:196)
+	at org.hibernate.query.hql.internal.DomainPathPart.resolvePathPart(DomainPathPart.java:42)
+	at org.hibernate.query.hql.internal.BasicDotIdentifierConsumer.consumeIdentifier(BasicDotIdentifierConsumer.java:91)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.visitSimplePath(SemanticQueryBuilder.java:5050)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.visitIndexedPathAccessFragment(SemanticQueryBuilder.java:4999)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.visitGeneralPathFragment(SemanticQueryBuilder.java:4974)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.visitGeneralPathExpression(SemanticQueryBuilder.java:1776)
+	at org.hibernate.grammars.hql.HqlParser$GeneralPathExpressionContext.accept(HqlParser.java:7699)
+	at org.antlr.v4.runtime.tree.AbstractParseTreeVisitor.visitChildren(AbstractParseTreeVisitor.java:46)
+	at org.hibernate.grammars.hql.HqlParserBaseVisitor.visitBarePrimaryExpression(HqlParserBaseVisitor.java:756)
+	at org.hibernate.grammars.hql.HqlParser$BarePrimaryExpressionContext.accept(HqlParser.java:7157)
+	at org.antlr.v4.runtime.tree.AbstractParseTreeVisitor.visitChildren(AbstractParseTreeVisitor.java:46)
+	at org.hibernate.grammars.hql.HqlParserBaseVisitor.visitExpressionOrPredicate(HqlParserBaseVisitor.java:896)
+	at org.hibernate.grammars.hql.HqlParser$ExpressionOrPredicateContext.accept(HqlParser.java:7927)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.visitFinalFunctionArgument(SemanticQueryBuilder.java:4090)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.visitGenericFunctionArguments(SemanticQueryBuilder.java:4067)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.visitGenericFunctionArguments(SemanticQueryBuilder.java:269)
+	at org.hibernate.grammars.hql.HqlParser$GenericFunctionArgumentsContext.accept(HqlParser.java:12208)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.getFunctionArguments(SemanticQueryBuilder.java:3970)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.visitGenericFunction(SemanticQueryBuilder.java:3849)
+	at org.hibernate.grammars.hql.HqlParser$GenericFunctionContext.accept(HqlParser.java:11842)
+	at org.antlr.v4.runtime.tree.AbstractParseTreeVisitor.visitChildren(AbstractParseTreeVisitor.java:46)
+	at org.hibernate.grammars.hql.HqlParserBaseVisitor.visitFunction(HqlParserBaseVisitor.java:1288)
+	at org.hibernate.grammars.hql.HqlParser$FunctionContext.accept(HqlParser.java:11614)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.visitFunctionExpression(SemanticQueryBuilder.java:1787)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.visitFunctionExpression(SemanticQueryBuilder.java:269)
+	at org.hibernate.grammars.hql.HqlParser$FunctionExpressionContext.accept(HqlParser.java:7579)
+	at org.antlr.v4.runtime.tree.AbstractParseTreeVisitor.visitChildren(AbstractParseTreeVisitor.java:46)
+	at org.hibernate.grammars.hql.HqlParserBaseVisitor.visitBarePrimaryExpression(HqlParserBaseVisitor.java:756)
+	at org.hibernate.grammars.hql.HqlParser$BarePrimaryExpressionContext.accept(HqlParser.java:7157)
+	at org.antlr.v4.runtime.tree.AbstractParseTreeVisitor.visitChildren(AbstractParseTreeVisitor.java:46)
+	at org.hibernate.grammars.hql.HqlParserBaseVisitor.visitExpressionOrPredicate(HqlParserBaseVisitor.java:896)
+	at org.hibernate.grammars.hql.HqlParser$ExpressionOrPredicateContext.accept(HqlParser.java:7927)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.visitSelectableNode(SemanticQueryBuilder.java:1332)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.visitSelection(SemanticQueryBuilder.java:1309)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.visitSelectClause(SemanticQueryBuilder.java:1302)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.visitQuery(SemanticQueryBuilder.java:1154)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.visitQuerySpecExpression(SemanticQueryBuilder.java:941)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.visitQuerySpecExpression(SemanticQueryBuilder.java:269)
+	at org.hibernate.grammars.hql.HqlParser$QuerySpecExpressionContext.accept(HqlParser.java:1869)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.visitSimpleQueryGroup(SemanticQueryBuilder.java:926)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.visitSimpleQueryGroup(SemanticQueryBuilder.java:269)
+	at org.hibernate.grammars.hql.HqlParser$SimpleQueryGroupContext.accept(HqlParser.java:1740)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.visitSelectStatement(SemanticQueryBuilder.java:443)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.visitStatement(SemanticQueryBuilder.java:402)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.buildSemanticModel(SemanticQueryBuilder.java:311)
+	at org.hibernate.query.hql.internal.StandardHqlTranslator.translate(StandardHqlTranslator.java:71)
+	... 9 common frames omitted
+2025-02-28 21:07:12.858 [main] ERROR ad.hibernate.hmarort.ui.UIAutoImpl - Error en la ejecución automática
+java.lang.RuntimeException: Error al calcular la facturación
+	at ad.hibernate.hmarort.dao.implementacion.DAOClienteImpl.calcularFacturacionTotalCliente(DAOClienteImpl.java:169)
+	at ad.hibernate.hmarort.ui.UIAutoImpl.generarInformesAutomaticos(UIAutoImpl.java:115)
+	at ad.hibernate.hmarort.ui.UIAutoImpl.iniciar(UIAutoImpl.java:61)
+	at ad.hibernate.hmarort.Main.main(Main.java:42)
+Caused by: java.lang.IllegalArgumentException: org.hibernate.query.sqm.UnknownPathException: Could not resolve attribute 'total' of 'ad.hibernate.hmarort.models.Pedido' [SELECT SUM(p.total) FROM Pedido p WHERE p.cliente.id = :idCliente]
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:143)
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:167)
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:173)
+	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:827)
+	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:133)
+	at ad.hibernate.hmarort.dao.implementacion.DAOClienteImpl.calcularFacturacionTotalCliente(DAOClienteImpl.java:158)
+	... 3 common frames omitted
+Caused by: org.hibernate.query.sqm.UnknownPathException: Could not resolve attribute 'total' of 'ad.hibernate.hmarort.models.Pedido' [SELECT SUM(p.total) FROM Pedido p WHERE p.cliente.id = :idCliente]
+	at org.hibernate.query.hql.internal.StandardHqlTranslator.translate(StandardHqlTranslator.java:87)
+	at org.hibernate.query.internal.QueryInterpretationCacheStandardImpl.createHqlInterpretation(QueryInterpretationCacheStandardImpl.java:165)
+	at org.hibernate.query.internal.QueryInterpretationCacheStandardImpl.resolveHqlInterpretation(QueryInterpretationCacheStandardImpl.java:147)
+	at org.hibernate.internal.AbstractSharedSessionContract.interpretHql(AbstractSharedSessionContract.java:769)
+	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:819)
+	... 5 common frames omitted
+Caused by: org.hibernate.query.sqm.PathElementException: Could not resolve attribute 'total' of 'ad.hibernate.hmarort.models.Pedido'
+	at org.hibernate.query.sqm.SqmPathSource.getSubPathSource(SqmPathSource.java:95)
+	at org.hibernate.query.sqm.tree.domain.AbstractSqmPath.get(AbstractSqmPath.java:203)
+	at org.hibernate.query.sqm.tree.domain.AbstractSqmFrom.resolvePathPart(AbstractSqmFrom.java:196)
+	at org.hibernate.query.hql.internal.DomainPathPart.resolvePathPart(DomainPathPart.java:42)
+	at org.hibernate.query.hql.internal.BasicDotIdentifierConsumer.consumeIdentifier(BasicDotIdentifierConsumer.java:91)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.visitSimplePath(SemanticQueryBuilder.java:5050)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.visitIndexedPathAccessFragment(SemanticQueryBuilder.java:4999)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.visitGeneralPathFragment(SemanticQueryBuilder.java:4974)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.visitGeneralPathExpression(SemanticQueryBuilder.java:1776)
+	at org.hibernate.grammars.hql.HqlParser$GeneralPathExpressionContext.accept(HqlParser.java:7699)
+	at org.antlr.v4.runtime.tree.AbstractParseTreeVisitor.visitChildren(AbstractParseTreeVisitor.java:46)
+	at org.hibernate.grammars.hql.HqlParserBaseVisitor.visitBarePrimaryExpression(HqlParserBaseVisitor.java:756)
+	at org.hibernate.grammars.hql.HqlParser$BarePrimaryExpressionContext.accept(HqlParser.java:7157)
+	at org.antlr.v4.runtime.tree.AbstractParseTreeVisitor.visitChildren(AbstractParseTreeVisitor.java:46)
+	at org.hibernate.grammars.hql.HqlParserBaseVisitor.visitExpressionOrPredicate(HqlParserBaseVisitor.java:896)
+	at org.hibernate.grammars.hql.HqlParser$ExpressionOrPredicateContext.accept(HqlParser.java:7927)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.visitFinalFunctionArgument(SemanticQueryBuilder.java:4090)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.visitGenericFunctionArguments(SemanticQueryBuilder.java:4067)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.visitGenericFunctionArguments(SemanticQueryBuilder.java:269)
+	at org.hibernate.grammars.hql.HqlParser$GenericFunctionArgumentsContext.accept(HqlParser.java:12208)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.getFunctionArguments(SemanticQueryBuilder.java:3970)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.visitGenericFunction(SemanticQueryBuilder.java:3849)
+	at org.hibernate.grammars.hql.HqlParser$GenericFunctionContext.accept(HqlParser.java:11842)
+	at org.antlr.v4.runtime.tree.AbstractParseTreeVisitor.visitChildren(AbstractParseTreeVisitor.java:46)
+	at org.hibernate.grammars.hql.HqlParserBaseVisitor.visitFunction(HqlParserBaseVisitor.java:1288)
+	at org.hibernate.grammars.hql.HqlParser$FunctionContext.accept(HqlParser.java:11614)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.visitFunctionExpression(SemanticQueryBuilder.java:1787)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.visitFunctionExpression(SemanticQueryBuilder.java:269)
+	at org.hibernate.grammars.hql.HqlParser$FunctionExpressionContext.accept(HqlParser.java:7579)
+	at org.antlr.v4.runtime.tree.AbstractParseTreeVisitor.visitChildren(AbstractParseTreeVisitor.java:46)
+	at org.hibernate.grammars.hql.HqlParserBaseVisitor.visitBarePrimaryExpression(HqlParserBaseVisitor.java:756)
+	at org.hibernate.grammars.hql.HqlParser$BarePrimaryExpressionContext.accept(HqlParser.java:7157)
+	at org.antlr.v4.runtime.tree.AbstractParseTreeVisitor.visitChildren(AbstractParseTreeVisitor.java:46)
+	at org.hibernate.grammars.hql.HqlParserBaseVisitor.visitExpressionOrPredicate(HqlParserBaseVisitor.java:896)
+	at org.hibernate.grammars.hql.HqlParser$ExpressionOrPredicateContext.accept(HqlParser.java:7927)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.visitSelectableNode(SemanticQueryBuilder.java:1332)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.visitSelection(SemanticQueryBuilder.java:1309)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.visitSelectClause(SemanticQueryBuilder.java:1302)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.visitQuery(SemanticQueryBuilder.java:1154)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.visitQuerySpecExpression(SemanticQueryBuilder.java:941)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.visitQuerySpecExpression(SemanticQueryBuilder.java:269)
+	at org.hibernate.grammars.hql.HqlParser$QuerySpecExpressionContext.accept(HqlParser.java:1869)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.visitSimpleQueryGroup(SemanticQueryBuilder.java:926)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.visitSimpleQueryGroup(SemanticQueryBuilder.java:269)
+	at org.hibernate.grammars.hql.HqlParser$SimpleQueryGroupContext.accept(HqlParser.java:1740)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.visitSelectStatement(SemanticQueryBuilder.java:443)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.visitStatement(SemanticQueryBuilder.java:402)
+	at org.hibernate.query.hql.internal.SemanticQueryBuilder.buildSemanticModel(SemanticQueryBuilder.java:311)
+	at org.hibernate.query.hql.internal.StandardHqlTranslator.translate(StandardHqlTranslator.java:71)
+	... 9 common frames omitted
+2025-02-28 21:07:12.860 [main] ERROR ad.hibernate.hmarort.ui.UIAutoImpl - Error en proceso automático: Error al calcular la facturación
+2025-02-28 21:07:12.860 [main] INFO  ad.hibernate.hmarort.Main - Aplicación finalizada exitosamente

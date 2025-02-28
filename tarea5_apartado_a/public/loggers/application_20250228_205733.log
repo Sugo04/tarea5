@@ -1,0 +1,59 @@
+2025-02-28 20:57:33.682 [main] INFO  ad.hibernate.hmarort.Main - Iniciando aplicación de gestión de pedidos
+2025-02-28 20:57:33.686 [main] INFO  ad.hibernate.hmarort.Main - Interfaz seleccionada: automatica
+2025-02-28 20:57:33.703 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-02-28 20:57:33.836 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@176b75f7
+2025-02-28 20:57:33.839 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-02-28 20:57:33.840 [main] INFO  a.h.h.database_config.SQLiteConfig - Iniciando inicialización de base de datos SQLite
+2025-02-28 20:57:33.849 [main] INFO  a.h.h.database_config.SQLiteConfig - Base de datos inicializada correctamente
+2025-02-28 20:57:33.866 [main] INFO  a.h.hmarort.utils.SessionManager - Inicializando SessionFactory de Hibernate
+2025-02-28 20:57:33.940 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-02-28 20:57:34.150 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-02-28 20:57:34.229 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-02-28 20:57:34.230 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.sqlite.JDBC
+2025-02-28 20:57:34.230 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:sqlite:src/main/resources/pedidos.db]
+2025-02-28 20:57:34.230 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {}
+2025-02-28 20:57:34.230 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2025-02-28 20:57:34.233 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 20 (min=1)
+2025-02-28 20:57:35.233 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-28 20:57:35.262 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@723742b2] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2025-02-28 20:57:35.277 [main] INFO  a.h.hmarort.utils.SessionManager - SessionFactory inicializada correctamente
+2025-02-28 20:57:35.280 [main] INFO  a.h.hmarort.factory.DAOFactory - DAOFactory inicializado correctamente
+2025-02-28 20:57:35.281 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - [GENERACIÓN AUTOMÁTICA DE DATOS]
+2025-02-28 20:57:35.284 [main] ERROR a.h.hmarort.utils.SessionManager - Error durante la transacción
+org.hibernate.HibernateException: No CurrentSessionContext configured
+	at org.hibernate.internal.SessionFactoryImpl.getCurrentSession(SessionFactoryImpl.java:640)
+	at ad.hibernate.hmarort.utils.SessionManager.openSession(SessionManager.java:65)
+	at ad.hibernate.hmarort.utils.SessionManager.execute(SessionManager.java:98)
+	at ad.hibernate.hmarort.dao.implementacion.DAOZonaEnvioImpl.agregarZonaEnvio(DAOZonaEnvioImpl.java:26)
+	at ad.hibernate.hmarort.ui.UIAutoImpl.generarDatosAutomaticos(UIAutoImpl.java:77)
+	at ad.hibernate.hmarort.ui.UIAutoImpl.iniciar(UIAutoImpl.java:60)
+	at ad.hibernate.hmarort.Main.main(Main.java:42)
+2025-02-28 20:57:35.287 [main] ERROR a.h.h.d.i.DAOZonaEnvioImpl - Error al insertar zona de envío
+java.lang.RuntimeException: Error durante la transacción
+	at ad.hibernate.hmarort.utils.SessionManager.execute(SessionManager.java:114)
+	at ad.hibernate.hmarort.dao.implementacion.DAOZonaEnvioImpl.agregarZonaEnvio(DAOZonaEnvioImpl.java:26)
+	at ad.hibernate.hmarort.ui.UIAutoImpl.generarDatosAutomaticos(UIAutoImpl.java:77)
+	at ad.hibernate.hmarort.ui.UIAutoImpl.iniciar(UIAutoImpl.java:60)
+	at ad.hibernate.hmarort.Main.main(Main.java:42)
+Caused by: org.hibernate.HibernateException: No CurrentSessionContext configured
+	at org.hibernate.internal.SessionFactoryImpl.getCurrentSession(SessionFactoryImpl.java:640)
+	at ad.hibernate.hmarort.utils.SessionManager.openSession(SessionManager.java:65)
+	at ad.hibernate.hmarort.utils.SessionManager.execute(SessionManager.java:98)
+	... 4 common frames omitted
+2025-02-28 20:57:35.288 [main] ERROR ad.hibernate.hmarort.ui.UIAutoImpl - Error en la ejecución automática
+java.sql.SQLException: Error al insertar zona de envío: Error durante la transacción
+	at ad.hibernate.hmarort.dao.implementacion.DAOZonaEnvioImpl.agregarZonaEnvio(DAOZonaEnvioImpl.java:33)
+	at ad.hibernate.hmarort.ui.UIAutoImpl.generarDatosAutomaticos(UIAutoImpl.java:77)
+	at ad.hibernate.hmarort.ui.UIAutoImpl.iniciar(UIAutoImpl.java:60)
+	at ad.hibernate.hmarort.Main.main(Main.java:42)
+Caused by: java.lang.RuntimeException: Error durante la transacción
+	at ad.hibernate.hmarort.utils.SessionManager.execute(SessionManager.java:114)
+	at ad.hibernate.hmarort.dao.implementacion.DAOZonaEnvioImpl.agregarZonaEnvio(DAOZonaEnvioImpl.java:26)
+	... 3 common frames omitted
+Caused by: org.hibernate.HibernateException: No CurrentSessionContext configured
+	at org.hibernate.internal.SessionFactoryImpl.getCurrentSession(SessionFactoryImpl.java:640)
+	at ad.hibernate.hmarort.utils.SessionManager.openSession(SessionManager.java:65)
+	at ad.hibernate.hmarort.utils.SessionManager.execute(SessionManager.java:98)
+	... 4 common frames omitted
+2025-02-28 20:57:35.288 [main] ERROR ad.hibernate.hmarort.ui.UIAutoImpl - Error en proceso automático: Error al insertar zona de envío: Error durante la transacción
+2025-02-28 20:57:35.288 [main] INFO  ad.hibernate.hmarort.Main - Aplicación finalizada exitosamente

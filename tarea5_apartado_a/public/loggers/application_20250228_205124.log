@@ -1,0 +1,84 @@
+2025-02-28 20:51:24.247 [main] INFO  ad.hibernate.hmarort.Main - Iniciando aplicación de gestión de pedidos
+2025-02-28 20:51:24.251 [main] INFO  ad.hibernate.hmarort.Main - Interfaz seleccionada: automatica
+2025-02-28 20:51:24.275 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-02-28 20:51:24.440 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@258d79be
+2025-02-28 20:51:24.442 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-02-28 20:51:24.442 [main] INFO  a.h.h.database_config.SQLiteConfig - Iniciando inicialización de base de datos SQLite
+2025-02-28 20:51:24.458 [main] ERROR a.h.h.database_config.SQLiteConfig - Error fatal al inicializar base de datos
+java.nio.file.NoSuchFileException: src\main\resources\pedidos.sql
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:234)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:380)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:432)
+	at java.base/java.nio.file.Files.readAllBytes(Files.java:3292)
+	at ad.hibernate.hmarort.database_config.SQLiteConfig.initializeDatabase(SQLiteConfig.java:62)
+	at ad.hibernate.hmarort.database_config.SQLiteConfig.initializeDataSource(SQLiteConfig.java:50)
+	at ad.hibernate.hmarort.database_config.SQLiteConfig.<init>(SQLiteConfig.java:31)
+	at ad.hibernate.hmarort.database_config.DatabaseConfigFactory.createSQLiteConfig(DatabaseConfigFactory.java:24)
+	at ad.hibernate.hmarort.database_config.DatabaseConfigFactory.createConfig(DatabaseConfigFactory.java:12)
+	at ad.hibernate.hmarort.ui.UIAutoImpl.<init>(UIAutoImpl.java:43)
+	at ad.hibernate.hmarort.ui.UIFactory.creaUI(UIFactory.java:23)
+	at ad.hibernate.hmarort.ui.UIFactory.crearUI(UIFactory.java:37)
+	at ad.hibernate.hmarort.Main.main(Main.java:38)
+2025-02-28 20:51:24.467 [main] INFO  a.h.hmarort.utils.SessionManager - Inicializando SessionFactory de Hibernate
+2025-02-28 20:51:24.543 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-02-28 20:51:24.794 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-02-28 20:51:24.881 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-02-28 20:51:24.882 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.sqlite.JDBC
+2025-02-28 20:51:24.883 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:sqlite:src/main/resources/pedidos.db]
+2025-02-28 20:51:24.883 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {}
+2025-02-28 20:51:24.883 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2025-02-28 20:51:24.886 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 20 (min=1)
+2025-02-28 20:51:24.983 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:sqlite:src/main/resources/pedidos.db]
+2025-02-28 20:51:24.987 [main] ERROR a.h.hmarort.utils.SessionManager - Error al inicializar SessionFactory
+org.hibernate.boot.registry.classloading.spi.ClassLoadingException: Unable to load class [acceso.datos.model.ZonaEnvio]
+	at org.hibernate.boot.registry.classloading.internal.ClassLoaderServiceImpl.classForName(ClassLoaderServiceImpl.java:126)
+	at org.hibernate.boot.model.source.internal.annotations.AnnotationMetadataSourceProcessorImpl.<init>(AnnotationMetadataSourceProcessorImpl.java:102)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess$1.<init>(MetadataBuildingProcess.java:204)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:198)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.build(MetadataBuildingProcess.java:129)
+	at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:449)
+	at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:101)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:910)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:960)
+	at ad.hibernate.hmarort.utils.SessionManager.<init>(SessionManager.java:30)
+	at ad.hibernate.hmarort.utils.SessionManager.getInstance(SessionManager.java:45)
+	at ad.hibernate.hmarort.dao.implementacion.DAOClienteImpl.<init>(DAOClienteImpl.java:21)
+	at ad.hibernate.hmarort.factory.DAOFactory.<init>(DAOFactory.java:31)
+	at ad.hibernate.hmarort.factory.DAOFactory.getInstance(DAOFactory.java:45)
+	at ad.hibernate.hmarort.ui.UIAutoImpl.<init>(UIAutoImpl.java:45)
+	at ad.hibernate.hmarort.ui.UIFactory.creaUI(UIFactory.java:23)
+	at ad.hibernate.hmarort.ui.UIFactory.crearUI(UIFactory.java:37)
+	at ad.hibernate.hmarort.Main.main(Main.java:38)
+Caused by: java.lang.ClassNotFoundException: Could not load requested class : acceso.datos.model.ZonaEnvio
+	at org.hibernate.boot.registry.classloading.internal.AggregatedClassLoader.findClass(AggregatedClassLoader.java:216)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:595)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:578)
+	at java.base/java.lang.Class.forName(Class.java:557)
+	at org.hibernate.boot.registry.classloading.internal.ClassLoaderServiceImpl.classForName(ClassLoaderServiceImpl.java:123)
+	... 17 common frames omitted
+Caused by: java.lang.Throwable: null
+	at org.hibernate.boot.registry.classloading.internal.AggregatedClassLoader.findClass(AggregatedClassLoader.java:209)
+	... 23 common frames omitted
+	Suppressed: java.lang.ClassNotFoundException: acceso.datos.model.ZonaEnvio
+		at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+		at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+		at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528)
+		at org.hibernate.boot.registry.classloading.internal.AggregatedClassLoader.findClass(AggregatedClassLoader.java:206)
+		... 23 common frames omitted
+	Suppressed: java.lang.ClassNotFoundException: acceso.datos.model.ZonaEnvio
+		at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+		at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+		at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528)
+		at org.hibernate.boot.registry.classloading.internal.AggregatedClassLoader.findClass(AggregatedClassLoader.java:206)
+		... 23 common frames omitted
+	Suppressed: java.lang.ClassNotFoundException: acceso.datos.model.ZonaEnvio
+		at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+		at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+		at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528)
+		at org.hibernate.boot.registry.classloading.internal.AggregatedClassLoader.findClass(AggregatedClassLoader.java:206)
+		... 23 common frames omitted

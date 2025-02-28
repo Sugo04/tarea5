@@ -1,66 +1,76 @@
 package ad.hibernate.hmarort.factory;
 
-import java.sql.Connection;
-
+import ad.hibernate.hmarort.dao.implementacion.DAOClienteImpl;
+import ad.hibernate.hmarort.dao.implementacion.DAOPedidoImpl;
+import ad.hibernate.hmarort.dao.implementacion.DAOZonaEnvioImpl;
 import ad.hibernate.hmarort.dao.interfaces.DAOCliente;
 import ad.hibernate.hmarort.dao.interfaces.DAOPedido;
 import ad.hibernate.hmarort.dao.interfaces.DAOZonaEnvio;
 import ad.hibernate.hmarort.database_config.DatabaseConfig;
 import ad.hibernate.hmarort.database_config.DatabaseType;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
- * Abstract factory para la creación de objetos DAO.
+ * Factoría singleton para crear instancias de DAOs utilizando Hibernate.
  */
-public abstract class DAOFactory {
+public class DAOFactory {
+    private static final Logger logger = LoggerFactory.getLogger(DAOFactory.class);
+    private static DAOFactory instance;
     
-    protected DatabaseConfig dbConfig;
+    private final DAOCliente clienteDAO;
+    private final DAOPedido pedidoDAO;
+    private final DAOZonaEnvio zonaEnvioDAO;
 
     /**
-     * Constructor protegido que recibe la configuración de la base de datos.
-     * @param databaseConfig
+     * Constructor privado que inicializa los DAOs con la configuración de base de datos.
      */
-    protected DAOFactory(DatabaseConfig databaseConfig) {
-        this.dbConfig = databaseConfig;
+    private DAOFactory(DatabaseConfig dbConfig) {
+        logger.debug("Inicializando DAOFactory con configuración de base de datos");
+        this.clienteDAO = new DAOClienteImpl();
+        this.pedidoDAO = new DAOPedidoImpl();
+        this.zonaEnvioDAO = new DAOZonaEnvioImpl();
+        logger.info("DAOFactory inicializado correctamente");
     }
 
     /**
-     * Obtiene una instancia de DAOFactory según el tipo de base de datos.
-     * @param dbType
-     * @param config
-     * @return
+     * Obtiene la única instancia de DAOFactory con la configuración de base de datos.
+     *
+     * @param dbConfig Configuración de la base de datos
+     * @return La instancia de DAOFactory
      */
-    public static DAOFactory getDAOFactory(DatabaseType dbType, DatabaseConfig config) {
-        return switch (dbType) {
-            case SQLITE -> new SQLiteDAOFactory(config);
-            case MYSQL -> throw new UnsupportedOperationException("MySQL no implementado aún");
-            case POSTGRESQL -> throw new UnsupportedOperationException("PostgreSQL no implementado aún");
-        };
+    public static synchronized DAOFactory getInstance(DatabaseConfig dbConfig) {
+        if (instance == null) {
+            instance = new DAOFactory(dbConfig);
+        }
+        return instance;
     }
 
     /**
-     * Crea un objeto DAOCliente.
-     * @return
+     * Obtiene un DAO para gestionar clientes.
+     *
+     * @return Una instancia de DAOCliente
      */
-    public abstract DAOCliente createClienteDAO();
+    public DAOCliente getClienteDAO() {
+        return clienteDAO;
+    }
 
     /**
-     * Crea un objeto DAOPedido.
-     * @return
+     * Obtiene un DAO para gestionar pedidos.
+     *
+     * @return Una instancia de DAOPedido
      */
-    public abstract DAOPedido createPedidoDAO();
+    public DAOPedido getPedidoDAO() {
+        return pedidoDAO;
+    }
 
     /**
-     * Crea un objeto DAOZonaEnvio.
-     * @return
+     * Obtiene un DAO para gestionar zonas de envío.
+     *
+     * @return Una instancia de DAOZonaEnvio
      */
-    public abstract DAOZonaEnvio createZonaEnvioDAO();
-
-    /**
-     * Obtiene una conexión a la base de datos.
-     * @return
-     * @throws Exception
-     */
-    public Connection getConnection() throws Exception {
-        return dbConfig.getConnection();
+    public DAOZonaEnvio getZonaEnvioDAO() {
+        return zonaEnvioDAO;
     }
 }

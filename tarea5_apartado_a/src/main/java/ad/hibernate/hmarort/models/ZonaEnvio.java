@@ -1,103 +1,125 @@
+/**
+ * Clase que representa una zona de envío en un sistema de acceso a datos.
+ */
 package ad.hibernate.hmarort.models;
 
-import java.util.List;
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
-@Table(name = "zonas_envio")
+@Table(name = "Zonas_Envio")
 public class ZonaEnvio {
+    /**
+     * Identificador único de la zona de envío.
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    @Column(name = "id_zona")
+    private int idZona;
     
-    @Column(name = "nombre")
-    private String nombre;
+    /**
+     * Nombre descriptivo de la zona de envío.
+     */
+    @Column(name = "nombre_zona", nullable = false, length = 100)
+    private String nombreZona;
     
-    @Column(name = "precio")
-    private double precio;
-    
-    @OneToMany(mappedBy = "zonaEnvio", cascade = CascadeType.ALL)
-    private List<Cliente> clientes;
+    /**
+     * Tarifa asociada al envío a esta zona.
+     */
+    @Column(name = "tarifa_envio", nullable = false)
+    private double tarifaEnvio;
 
     /**
-     * Constructor por defecto.
+     * Constructor que inicializa una nueva instancia de ZonaEnvio con los valores proporcionados.
+     *
+     * @param idZona        El identificador único de la zona de envío.
+     * @param nombreZona    El nombre descriptivo de la zona de envío.
+     * @param tarifaEnvio   La tarifa asociada al envío a esta zona.
+     */
+    public ZonaEnvio(int idZona, String nombreZona, double tarifaEnvio) {
+        this.idZona = idZona;
+        this.nombreZona = nombreZona;
+        this.tarifaEnvio = tarifaEnvio;
+    }
+
+    /**
+     * Constructor vacío que crea una instancia de ZonaEnvio sin inicializar valores.
      */
     public ZonaEnvio() {
     }
 
     /**
-     * Constructor con parámetros.
-     * @param id
-     * @param nombre
-     * @param precio
+     * Obtiene el identificador único de la zona de envío.
+     *
+     * @return El identificador único de la zona de envío.
      */
-    public ZonaEnvio(int id, String nombre, double precio) {
-        this.id = id;
-        this.nombre = nombre;
-        this.precio = precio;
+    public int getIdZona() {
+        return idZona;
     }
 
     /**
-     * Devuelve el id de la zona de envío.
-     * @return
+     * Establece el identificador único de la zona de envío.
+     *
+     * @param idZona El nuevo identificador único de la zona de envío.
      */
-    public int getId() {
-        return id;
-    }
-    
-    /**
-     * Establece el id de la zona de envío.
-     * @param id
-     */
-    public void setId(int id) {
-        this.id = id;
+    public void setIdZona(int idZona) {
+        this.idZona = idZona;
     }
 
     /**
-     * Devuelve el nombre de la zona de envío.
-     * @return
+     * Obtiene el nombre descriptivo de la zona de envío.
+     *
+     * @return El nombre descriptivo de la zona de envío.
      */
-    public String getNombre() {
-        return nombre;
+    public String getNombreZona() {
+        return nombreZona;
     }
 
     /**
-     * Establece el nombre de la zona de envío.
-     * @param nombre
+     * Establece el nombre descriptivo de la zona de envío, realizando validaciones.
+     *
+     * @param nombreZona El nuevo nombre descriptivo de la zona de envío.
      */
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombreZona(String nombreZona) {
+        if (nombreZona == null || nombreZona.trim().isEmpty()) {
+            throw new IllegalArgumentException("El nombre de zona no puede estar vacío");
+        }
+        if (nombreZona.length() > 100) {
+            throw new IllegalArgumentException("El nombre de zona no puede exceder 100 caracteres");
+        }
+        this.nombreZona = nombreZona.trim();
     }
 
     /**
-     * Devuelve el precio de la zona de envío.
-     * @return
+     * Obtiene la tarifa asociada al envío a esta zona.
+     *
+     * @return La tarifa asociada al envío a esta zona.
      */
-    public double getPrecio() {
-        return precio;
+    public double getTarifaEnvio() {
+        return tarifaEnvio;
     }
 
     /**
-     * Establece el precio de la zona de envío.
-     * @param precio
+     * Establece la tarifa asociada al envío a esta zona, realizando validaciones.
+     *
+     * @param tarifaEnvio La nueva tarifa asociada al envío a esta zona.
      */
-    public void setPrecio(double precio) {
-        this.precio = precio;
-    }
-    
-    /**
-     * Devuelve la lista de clientes de esta zona.
-     * @return
-     */
-    public List<Cliente> getClientes() {
-        return clientes;
+    public void setTarifaEnvio(double tarifaEnvio) {
+        if (tarifaEnvio < 0) {
+            throw new IllegalArgumentException("La tarifa no puede ser negativa");
+        }
+        if (tarifaEnvio > 999.99) {
+            throw new IllegalArgumentException("La tarifa excede el máximo permitido");
+        }
+        this.tarifaEnvio = tarifaEnvio;
     }
 
     /**
-     * Establece la lista de clientes de esta zona.
-     * @param clientes
+     * Devuelve una representación en forma de cadena del objeto ZonaEnvio.
+     *
+     * @return Una cadena que describe la zona de envío.
      */
-    public void setClientes(List<Cliente> clientes) {
-        this.clientes = clientes;
+    @Override
+    public String toString() {
+        return String.format("%s (Tarifa: %.2f€)", nombreZona, tarifaEnvio);
     }
 }

@@ -1,0 +1,64 @@
+2025-02-28 21:00:14.213 [main] INFO  ad.hibernate.hmarort.Main - Iniciando aplicación de gestión de pedidos
+2025-02-28 21:00:14.217 [main] INFO  ad.hibernate.hmarort.Main - Interfaz seleccionada: automatica
+2025-02-28 21:00:14.236 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-02-28 21:00:14.362 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@176b75f7
+2025-02-28 21:00:14.364 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-02-28 21:00:14.364 [main] INFO  a.h.h.database_config.SQLiteConfig - Iniciando inicialización de base de datos SQLite
+2025-02-28 21:00:14.384 [main] WARN  a.h.h.database_config.SQLiteConfig - Advertencia al ejecutar statement: [SQLITE_ERROR] SQL error or missing database (table Zonas_Envio already exists)
+2025-02-28 21:00:14.385 [main] WARN  a.h.h.database_config.SQLiteConfig - Advertencia al ejecutar statement: [SQLITE_CONSTRAINT_PRIMARYKEY] A PRIMARY KEY constraint failed (UNIQUE constraint failed: Zonas_Envio.id_zona)
+2025-02-28 21:00:14.386 [main] WARN  a.h.h.database_config.SQLiteConfig - Advertencia al ejecutar statement: [SQLITE_CONSTRAINT_PRIMARYKEY] A PRIMARY KEY constraint failed (UNIQUE constraint failed: Clientes.id_cliente)
+2025-02-28 21:00:14.386 [main] INFO  a.h.h.database_config.SQLiteConfig - Base de datos inicializada correctamente
+2025-02-28 21:00:14.389 [main] INFO  a.h.hmarort.utils.SessionManager - Inicializando SessionFactory de Hibernate
+2025-02-28 21:00:14.468 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-02-28 21:00:14.692 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-02-28 21:00:14.794 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-02-28 21:00:14.794 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.sqlite.JDBC
+2025-02-28 21:00:14.795 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:sqlite:src/main/resources/pedidos.db]
+2025-02-28 21:00:14.795 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {}
+2025-02-28 21:00:14.795 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2025-02-28 21:00:14.798 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 20 (min=1)
+2025-02-28 21:00:15.900 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5763a655] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2025-02-28 21:00:15.913 [main] INFO  a.h.hmarort.utils.SessionManager - SessionFactory inicializada correctamente
+2025-02-28 21:00:15.914 [main] INFO  a.h.hmarort.factory.DAOFactory - DAOFactory inicializado correctamente
+2025-02-28 21:00:15.915 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - [GENERACIÓN AUTOMÁTICA DE DATOS]
+2025-02-28 21:00:16.006 [main] INFO  a.h.h.d.i.DAOZonaEnvioImpl - Zona de envío insertada con ID: 3
+2025-02-28 21:00:16.014 [main] INFO  a.h.h.d.i.DAOZonaEnvioImpl - Zona de envío insertada con ID: 4
+2025-02-28 21:00:16.016 [main] INFO  a.h.h.d.i.DAOZonaEnvioImpl - Zona de envío insertada con ID: 5
+2025-02-28 21:00:16.018 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - ✓ Zonas de envío generadas
+2025-02-28 21:00:16.021 [main] INFO  a.h.h.d.i.DAOClienteImpl - Cliente insertado con ID: 5
+2025-02-28 21:00:16.024 [main] INFO  a.h.h.d.i.DAOClienteImpl - Cliente insertado con ID: 6
+2025-02-28 21:00:16.026 [main] INFO  a.h.h.d.i.DAOClienteImpl - Cliente insertado con ID: 7
+2025-02-28 21:00:16.029 [main] INFO  a.h.h.d.i.DAOClienteImpl - Cliente insertado con ID: 8
+2025-02-28 21:00:16.034 [main] INFO  a.h.h.d.i.DAOClienteImpl - Cliente insertado con ID: 9
+2025-02-28 21:00:16.034 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - ✓ Clientes generados
+2025-02-28 21:00:16.037 [main] INFO  a.h.h.d.implementacion.DAOPedidoImpl - Pedido insertado con ID: 1
+2025-02-28 21:00:16.041 [main] INFO  a.h.h.d.implementacion.DAOPedidoImpl - Pedido insertado con ID: 2
+2025-02-28 21:00:16.044 [main] INFO  a.h.h.d.implementacion.DAOPedidoImpl - Pedido insertado con ID: 3
+2025-02-28 21:00:16.046 [main] INFO  a.h.h.d.implementacion.DAOPedidoImpl - Pedido insertado con ID: 4
+2025-02-28 21:00:16.049 [main] INFO  a.h.h.d.implementacion.DAOPedidoImpl - Pedido insertado con ID: 5
+2025-02-28 21:00:16.053 [main] INFO  a.h.h.d.implementacion.DAOPedidoImpl - Pedido insertado con ID: 6
+2025-02-28 21:00:16.055 [main] INFO  a.h.h.d.implementacion.DAOPedidoImpl - Pedido insertado con ID: 7
+2025-02-28 21:00:16.057 [main] INFO  a.h.h.d.implementacion.DAOPedidoImpl - Pedido insertado con ID: 8
+2025-02-28 21:00:16.058 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - ✓ Pedidos generados
+2025-02-28 21:00:16.059 [main] INFO  ad.hibernate.hmarort.ui.UIAutoImpl - [INFORME AUTOMÁTICO]
+2025-02-28 21:00:16.059 [main] ERROR a.h.h.d.i.DAOClienteImpl - Error al obtener todos los clientes
+org.hibernate.HibernateException: Calling method 'createQuery' is not valid without an active transaction (Current status: NOT_ACTIVE)
+	at org.hibernate.context.internal.ThreadLocalSessionContext$TransactionProtectionWrapper.invoke(ThreadLocalSessionContext.java:339)
+	at jdk.proxy2/jdk.proxy2.$Proxy54.createQuery(Unknown Source)
+	at ad.hibernate.hmarort.dao.implementacion.DAOClienteImpl.obtenerTodosLosClientes(DAOClienteImpl.java:69)
+	at ad.hibernate.hmarort.ui.UIAutoImpl.generarInformesAutomaticos(UIAutoImpl.java:111)
+	at ad.hibernate.hmarort.ui.UIAutoImpl.iniciar(UIAutoImpl.java:61)
+	at ad.hibernate.hmarort.Main.main(Main.java:42)
+2025-02-28 21:00:16.060 [main] ERROR ad.hibernate.hmarort.ui.UIAutoImpl - Error en la ejecución automática
+java.sql.SQLException: Error al obtener clientes: Calling method 'createQuery' is not valid without an active transaction (Current status: NOT_ACTIVE)
+	at ad.hibernate.hmarort.dao.implementacion.DAOClienteImpl.obtenerTodosLosClientes(DAOClienteImpl.java:75)
+	at ad.hibernate.hmarort.ui.UIAutoImpl.generarInformesAutomaticos(UIAutoImpl.java:111)
+	at ad.hibernate.hmarort.ui.UIAutoImpl.iniciar(UIAutoImpl.java:61)
+	at ad.hibernate.hmarort.Main.main(Main.java:42)
+Caused by: org.hibernate.HibernateException: Calling method 'createQuery' is not valid without an active transaction (Current status: NOT_ACTIVE)
+	at org.hibernate.context.internal.ThreadLocalSessionContext$TransactionProtectionWrapper.invoke(ThreadLocalSessionContext.java:339)
+	at jdk.proxy2/jdk.proxy2.$Proxy54.createQuery(Unknown Source)
+	at ad.hibernate.hmarort.dao.implementacion.DAOClienteImpl.obtenerTodosLosClientes(DAOClienteImpl.java:69)
+	... 3 common frames omitted
+2025-02-28 21:00:16.060 [main] ERROR ad.hibernate.hmarort.ui.UIAutoImpl - Error en proceso automático: Error al obtener clientes: Calling method 'createQuery' is not valid without an active transaction (Current status: NOT_ACTIVE)
+2025-02-28 21:00:16.062 [main] INFO  ad.hibernate.hmarort.Main - Aplicación finalizada exitosamente
