@@ -1,16 +1,16 @@
 # Ejercicio 5.1 - Héctor Martín Ortega
 
-    Tome el ejercicio sobre pedidos de clientes que se resolvió en la unidad dedicada a conectores y resuélvalo usando Hibernate respetando escrupulosamente la interfaz que se ideó en la resolución de aquel ejercicio o, lo que es lo mismo, para un usuario final no debería haber ninguna diferencia entre la ejecución de una u otra aplicación, porque verá ambas iguales.
+Tome el ejercicio sobre pedidos de clientes que se resolvió en la unidad dedicada a conectores y resuélvalo usando Hibernate respetando escrupulosamente la interfaz que se ideó en la resolución de aquel ejercicio o, lo que es lo mismo, para un usuario final no debería haber ninguna diferencia entre la ejecución de una u otra aplicación, porque verá ambas iguales.
 
-    Debe resolver dos veces el ejercicio usando dos estrategias distintas:
+Debe resolver dos veces el ejercicio usando dos estrategias distintas:
 
-        Modifique el código del programa para acomodarse a la API de Hibernate/JPA.
+    Modifique el código del programa para acomodarse a la API de Hibernate/JPA.
 
-        Respete escrupulosamente el programa ya escrito y limítese a:
+    Respete escrupulosamente el programa ya escrito y limítese a:
 
-            Anotar las clases del modelo para que pueda interpretarlas Hibernate.
+        Anotar las clases del modelo para que pueda interpretarlas Hibernate.
 
-            Escriba la traducción entre la API que usó en el ejercicio citado y la de Hibernate/JPA, a fin de que no haya que cambiar ninguna línea del programa (salvo las importaciones, claro está).
+        Escriba la traducción entre la API que usó en el ejercicio citado y la de Hibernate/JPA, a fin de que no haya que cambiar ninguna línea del programa (salvo las importaciones, claro está).
 
 La estructura del proyecto ha terminado siendo la siguiente:
 ```
