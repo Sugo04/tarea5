@@ -1,9 +1,23 @@
 package ad.hibernate.hmarort.models;
 
+import java.util.List;
+import javax.persistence.*;
+
+@Entity
+@Table(name = "zonas_envio")
 public class ZonaEnvio {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    
+    @Column(name = "nombre")
     private String nombre;
+    
+    @Column(name = "precio")
     private double precio;
+    
+    @OneToMany(mappedBy = "zonaEnvio", cascade = CascadeType.ALL)
+    private List<Cliente> clientes;
 
     /**
      * Constructor por defecto.
@@ -70,5 +84,20 @@ public class ZonaEnvio {
     public void setPrecio(double precio) {
         this.precio = precio;
     }
+    
+    /**
+     * Devuelve la lista de clientes de esta zona.
+     * @return
+     */
+    public List<Cliente> getClientes() {
+        return clientes;
+    }
 
+    /**
+     * Establece la lista de clientes de esta zona.
+     * @param clientes
+     */
+    public void setClientes(List<Cliente> clientes) {
+        this.clientes = clientes;
+    }
 }

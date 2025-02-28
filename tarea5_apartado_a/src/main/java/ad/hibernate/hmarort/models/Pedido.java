@@ -1,12 +1,27 @@
 package ad.hibernate.hmarort.models;
 
 import java.time.LocalDate;
+import javax.persistence.*;
 
+@Entity
+@Table(name = "pedidos")
 public class Pedido {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    
+    @Column(name = "fecha")
     private LocalDate fecha;
+    
+    @Column(name = "importe")
     private double importe;
+    
+    @Column(name = "id_cliente")
     private int idCliente;
+    
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_cliente", insertable = false, updatable = false)
+    private Cliente cliente;
 
     /**
      * Constructor por defecto.
@@ -91,5 +106,20 @@ public class Pedido {
     public void setIdCliente(int idCliente) {
         this.idCliente = idCliente;
     }
+    
+    /**
+     * Devuelve el cliente asociado al pedido.
+     * @return
+     */
+    public Cliente getCliente() {
+        return cliente;
+    }
 
+    /**
+     * Establece el cliente asociado al pedido.
+     * @param cliente
+     */
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
 }
