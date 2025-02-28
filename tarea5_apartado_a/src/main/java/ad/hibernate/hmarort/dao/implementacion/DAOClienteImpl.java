@@ -87,18 +87,13 @@ public class DAOClienteImpl implements DAOCliente {
 
     @Override
     public void actualizarInformacionCliente(Cliente cliente) throws SQLException {
-        Transaction transaction = null;
         try {
-            Session session = sessionManager.getCurrentSession();
-            transaction = session.beginTransaction();
-            LOGGER.debug("Actualizando cliente con ID: {}", cliente.getId_Cliente());
-            session.merge(cliente);
-            transaction.commit();
-            LOGGER.info("Cliente actualizado: {}", cliente.getNombre());
+            sessionManager.execute(session -> {
+                LOGGER.debug("Actualizando cliente con ID: {}", cliente.getId_Cliente());
+                session.merge(cliente);
+                LOGGER.info("Cliente actualizado: {}", cliente.getNombre());
+            });
         } catch (Exception e) {
-            if (transaction != null && transaction.isActive()) {
-                transaction.rollback();
-            }
             LOGGER.error("Error al actualizar cliente", e);
             throw new SQLException("Error al actualizar cliente: " + e.getMessage(), e);
         }
@@ -106,24 +101,19 @@ public class DAOClienteImpl implements DAOCliente {
 
     @Override
     public void eliminarClientePorId(int id) throws SQLException {
-        Transaction transaction = null;
         try {
-            Session session = sessionManager.getCurrentSession();
-            transaction = session.beginTransaction();
-            LOGGER.debug("Eliminando cliente con ID: {}", id);
-            Cliente cliente = session.get(Cliente.class, id);
-            if (cliente != null) {
-                session.remove(cliente);
-                transaction.commit();
-                LOGGER.info("Cliente eliminado con ID: {}", id);
-            } else {
-                LOGGER.warn("No se encontró cliente para eliminar con ID: {}", id);
-                throw new SQLException("El cliente con ID " + id + " no existe");
-            }
-        } catch (Exception e) {
-            if (transaction != null && transaction.isActive()) {
-                transaction.rollback();
-            }
+            sessionManager.execute(session -> {
+                LOGGER.debug("Eliminando cliente con ID: {}", id);
+                Cliente cliente = session.get(Cliente.class, id);
+                if (cliente != null) {
+                    session.remove(cliente);
+                    LOGGER.info("Cliente eliminado con ID: {}", id);
+                } else {
+                    LOGGER.warn("No se encontró cliente para eliminar con ID: {}", id);
+                    throw new RuntimeException("El cliente con ID " + id + " no existe");
+                }
+            });
+        } catch (RuntimeException e) {
             LOGGER.error("Error al eliminar cliente", e);
             throw new SQLException("Error al eliminar cliente: " + e.getMessage(), e);
         }
@@ -132,16 +122,18 @@ public class DAOClienteImpl implements DAOCliente {
     @Override
     public List<Cliente> obtenerClientePorZona(int idZona) throws SQLException {
         try {
-            Session session = sessionManager.getCurrentSession();
-            LOGGER.debug("Buscando clientes en la zona: {}", idZona);
-            Query<Cliente> query = session.createQuery("FROM Cliente WHERE idZonaEnvio = :idZona", Cliente.class);
-            query.setParameter("idZona", idZona);
-            List<Cliente> clientes = query.getResultList();
-            LOGGER.debug("Se encontraron {} clientes en la zona {}", clientes.size(), idZona);
-            return clientes;
+            return sessionManager.executeWithResult(session -> {
+                LOGGER.debug("Buscando clientes en zona con ID: {}", idZona);
+                Query<Cliente> query = session.createQuery(
+                        "FROM Cliente WHERE idZona = :idZona", Cliente.class);
+                query.setParameter("idZona", idZona);
+                List<Cliente> clientes = query.getResultList();
+                LOGGER.debug("Se encontraron {} clientes en la zona {}", clientes.size(), idZona);
+                return clientes;
+            });
         } catch (Exception e) {
-            LOGGER.error("Error al obtener clientes por zona", e);
-            throw new SQLException("Error al obtener clientes por zona: " + e.getMessage(), e);
+            LOGGER.error("Error al buscar clientes por zona", e);
+            throw new SQLException("Error al buscar clientes por zona: " + e.getMessage(), e);
         }
     }
 

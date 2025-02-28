@@ -4,7 +4,6 @@ import ad.hibernate.hmarort.dao.interfaces.DAOZonaEnvio;
 import ad.hibernate.hmarort.models.ZonaEnvio;
 import ad.hibernate.hmarort.utils.SessionManager;
 
-import org.hibernate.Session;
 import org.hibernate.query.Query;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,0 +1,45 @@
+2025-02-28 21:16:08.166 [main] INFO  ad.hibernate.hmarort.Main - Iniciando aplicación de gestión de pedidos
+2025-02-28 21:16:08.170 [main] INFO  ad.hibernate.hmarort.Main - Interfaz seleccionada: manual
+2025-02-28 21:16:08.190 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-02-28 21:16:08.349 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@5965be2d
+2025-02-28 21:16:08.352 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-02-28 21:16:08.352 [main] INFO  a.h.h.database_config.SQLiteConfig - Iniciando inicialización de base de datos SQLite
+2025-02-28 21:16:08.374 [main] WARN  a.h.h.database_config.SQLiteConfig - Advertencia al ejecutar statement: [SQLITE_ERROR] SQL error or missing database (table Zonas_Envio already exists)
+2025-02-28 21:16:08.375 [main] WARN  a.h.h.database_config.SQLiteConfig - Advertencia al ejecutar statement: [SQLITE_CONSTRAINT_PRIMARYKEY] A PRIMARY KEY constraint failed (UNIQUE constraint failed: Zonas_Envio.id_zona)
+2025-02-28 21:16:08.375 [main] WARN  a.h.h.database_config.SQLiteConfig - Advertencia al ejecutar statement: [SQLITE_CONSTRAINT_PRIMARYKEY] A PRIMARY KEY constraint failed (UNIQUE constraint failed: Clientes.id_cliente)
+2025-02-28 21:16:08.375 [main] INFO  a.h.h.database_config.SQLiteConfig - Base de datos inicializada correctamente
+2025-02-28 21:16:08.378 [main] INFO  a.h.hmarort.utils.SessionManager - Inicializando SessionFactory de Hibernate
+2025-02-28 21:16:08.460 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-02-28 21:16:08.748 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-02-28 21:16:08.849 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-02-28 21:16:08.849 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.sqlite.JDBC
+2025-02-28 21:16:08.849 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:sqlite:src/main/resources/pedidos.db]
+2025-02-28 21:16:08.849 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {}
+2025-02-28 21:16:08.850 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2025-02-28 21:16:08.853 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 20 (min=1)
+2025-02-28 21:16:09.970 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@40c8067] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2025-02-28 21:16:09.985 [main] INFO  a.h.hmarort.utils.SessionManager - SessionFactory inicializada correctamente
+2025-02-28 21:16:09.988 [main] INFO  a.h.hmarort.factory.DAOFactory - DAOFactory inicializado correctamente
+2025-02-28 21:16:16.027 [main] ERROR a.h.h.d.i.DAOClienteImpl - Error al buscar cliente por ID
+org.hibernate.HibernateException: Calling method 'get' is not valid without an active transaction (Current status: NOT_ACTIVE)
+	at org.hibernate.context.internal.ThreadLocalSessionContext$TransactionProtectionWrapper.invoke(ThreadLocalSessionContext.java:339)
+	at jdk.proxy2/jdk.proxy2.$Proxy54.get(Unknown Source)
+	at ad.hibernate.hmarort.dao.implementacion.DAOClienteImpl.obtenerClientePorId(DAOClienteImpl.java:51)
+	at ad.hibernate.hmarort.ui.UIManualImpl.modificarCliente(UIManualImpl.java:152)
+	at ad.hibernate.hmarort.ui.UIManualImpl.gestionarClientes(UIManualImpl.java:116)
+	at ad.hibernate.hmarort.ui.UIManualImpl.iniciar(UIManualImpl.java:61)
+	at ad.hibernate.hmarort.Main.main(Main.java:42)
+2025-02-28 21:16:16.028 [main] ERROR a.hibernate.hmarort.ui.UIManualImpl - Error en la interfaz manual
+java.sql.SQLException: Error al buscar cliente: Calling method 'get' is not valid without an active transaction (Current status: NOT_ACTIVE)
+	at ad.hibernate.hmarort.dao.implementacion.DAOClienteImpl.obtenerClientePorId(DAOClienteImpl.java:60)
+	at ad.hibernate.hmarort.ui.UIManualImpl.modificarCliente(UIManualImpl.java:152)
+	at ad.hibernate.hmarort.ui.UIManualImpl.gestionarClientes(UIManualImpl.java:116)
+	at ad.hibernate.hmarort.ui.UIManualImpl.iniciar(UIManualImpl.java:61)
+	at ad.hibernate.hmarort.Main.main(Main.java:42)
+Caused by: org.hibernate.HibernateException: Calling method 'get' is not valid without an active transaction (Current status: NOT_ACTIVE)
+	at org.hibernate.context.internal.ThreadLocalSessionContext$TransactionProtectionWrapper.invoke(ThreadLocalSessionContext.java:339)
+	at jdk.proxy2/jdk.proxy2.$Proxy54.get(Unknown Source)
+	at ad.hibernate.hmarort.dao.implementacion.DAOClienteImpl.obtenerClientePorId(DAOClienteImpl.java:51)
+	... 4 common frames omitted
+2025-02-28 21:16:29.932 [main] INFO  a.h.h.d.implementacion.DAOPedidoImpl - Pedido insertado con ID: 59
+2025-02-28 21:16:44.021 [main] INFO  a.h.h.d.i.DAOClienteImpl - Cliente eliminado con ID: 35

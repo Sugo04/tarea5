@@ -7,8 +7,6 @@ import ad.hibernate.hmarort.dao.interfaces.DAOCliente;
 import ad.hibernate.hmarort.dao.interfaces.DAOPedido;
 import ad.hibernate.hmarort.dao.interfaces.DAOZonaEnvio;
 import ad.hibernate.hmarort.database_config.DatabaseConfig;
-import ad.hibernate.hmarort.database_config.DatabaseType;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
