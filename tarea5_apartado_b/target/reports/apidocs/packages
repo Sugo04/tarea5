@@ -1,0 +1,9 @@
+ad.conectores_hibernate.hmarort.dao.implementacion.hibernate
+ad.conectores_hibernate.hmarort.dao.implementacion.sqlite
+ad.conectores_hibernate.hmarort.dao.interfaces
+ad.conectores_hibernate.hmarort.database_config
+ad.conectores_hibernate.hmarort.factory
+ad.conectores_hibernate.hmarort
+ad.conectores_hibernate.hmarort.models
+ad.conectores_hibernate.hmarort.ui
+ad.conectores_hibernate.hmarort.utils
