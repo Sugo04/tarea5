@@ -4,6 +4,9 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Scanner;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import ad.conectores_hibernate.hmarort.dao.interfaces.DAOCliente;
 import ad.conectores_hibernate.hmarort.dao.interfaces.DAOPedido;
 import ad.conectores_hibernate.hmarort.dao.interfaces.DAOZonaEnvio;
@@ -17,10 +20,11 @@ import ad.conectores_hibernate.hmarort.models.Pedido;
 import ad.conectores_hibernate.hmarort.models.ZonaEnvio;
 
 /**
- * Implementación manual de la interfaz de usuario que permite la interacción
- * directa con el usuario a través de la consola.
+ * Implementación manual de la interfaz de usuario.
  */
 public class UIManualImpl implements UI {
+    private static final Logger logger = LoggerFactory.getLogger(UIManualImpl.class);
+
     private DAOCliente daoCliente;
     private DAOPedido daoPedido;
     private DAOZonaEnvio daoZonaEnvio;
@@ -28,21 +32,21 @@ public class UIManualImpl implements UI {
     private DatabaseConfig dbConfig;
 
     /**
-     * Constructor que inicializa la configuración de la base de datos, los DAOs y
-     * el scanner.
+     * Constructor que inicializa la configuración de la base de datos y los DAOs.
      */
-    public UIManualImpl() {
+    public UIManualImpl(DatabaseType typ) {
         DatabaseProperties properties = new DatabaseProperties.Builder()
                 .url("src/main/resources/pedidos.db")
                 .build();
 
-        dbConfig = DatabaseConfigFactory.createConfig(DatabaseType.SQLITE, properties);
+        dbConfig = DatabaseConfigFactory.createConfig(typ, properties);
 
-        DAOFactory factory = DAOFactory.getDAOFactory(DatabaseType.SQLITE, dbConfig);
-
+        DAOFactory factory = DAOFactory.getDAOFactory(typ, dbConfig);
+        
         daoCliente = factory.createClienteDAO();
         daoPedido = factory.createPedidoDAO();
         daoZonaEnvio = factory.createZonaEnvioDAO();
+        
         scanner = new Scanner(System.in);
     }
 
@@ -63,8 +67,10 @@ public class UIManualImpl implements UI {
                         mostrarMensaje("\n📍 Saliendo del sistema...");
                         return;
                     }
+                    default -> mostrarError("❌ Opción inválida. Intente nuevamente.");
                 }
             } catch (Exception e) {
+                logger.error("Error en la interfaz manual", e);
                 mostrarError("❌ Error: " + e.getMessage());
             }
         }
@@ -189,7 +195,7 @@ public class UIManualImpl implements UI {
     private void listarClientes() throws Exception {
         List<Cliente> clientes = daoCliente.obtenerTodosLosClientes();
         clientes.forEach(c -> System.out.println(
-                "ID: " + c.getId() +
+                "ID: " + c.getIdCliente() +
                         ", Nombre: " + c.getNombre() +
                         ", Email: " + c.getEmail()));
     }
@@ -252,7 +258,7 @@ public class UIManualImpl implements UI {
         System.out.print("Nuevo importe (enter para mantener actual): ");
         String importeStr = scanner.nextLine();
         if (!importeStr.isEmpty()) {
-            pedido.setImporte(Double.parseDouble(importeStr));
+            pedido.setImporteTotal(Double.parseDouble(importeStr));
         }
 
         daoPedido.actualizarPedido(pedido);
@@ -279,9 +285,9 @@ public class UIManualImpl implements UI {
     private void listarPedidos() throws Exception {
         List<Pedido> pedidos = daoPedido.obtenerTodosLosPedidos();
         pedidos.forEach(p -> System.out.println(
-                "ID: " + p.getId() +
+                "ID: " + p.getIdPedido() +
                         ", Fecha: " + p.getFecha() +
-                        ", Importe: " + p.getImporte() +
+                        ", Importe: " + p.getImporteTotal() +
                         ", Cliente ID: " + p.getIdCliente()));
     }
 
@@ -294,9 +300,9 @@ public class UIManualImpl implements UI {
     public void consultarZonasEnvio() throws Exception {
         List<ZonaEnvio> zonas = daoZonaEnvio.obtenerTodasLasZonas();
         zonas.forEach(z -> System.out.println(
-                "ID: " + z.getId() +
-                        ", Nombre: " + z.getNombre() +
-                        ", Precio: " + z.getPrecio()));
+                "ID: " + z.getIdZona() +
+                        ", Nombre: " + z.getNombreZona() +
+                        ", Precio: " + z.getTarifaEnvio()));
     }
 
     /**
@@ -314,9 +320,9 @@ public class UIManualImpl implements UI {
 
         System.out.println("Pedidos del Cliente:");
         pedidos.forEach(p -> System.out.println(
-                "ID: " + p.getId() +
+                "ID: " + p.getIdPedido() +
                         ", Fecha: " + p.getFecha() +
-                        ", Importe: " + p.getImporte()));
+                        ", Importe: " + p.getImporteTotal()));
         System.out.println("Total Facturado: " + totalFacturado);
     }
 

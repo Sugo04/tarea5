@@ -1,0 +1,31 @@
+2025-02-28 22:22:53.068 [main] INFO  a.conectores_hibernate.hmarort.Main - Iniciando aplicación de gestión de pedidos
+2025-02-28 22:22:53.072 [main] INFO  a.conectores_hibernate.hmarort.Main - Interfaz seleccionada: AUTO
+2025-02-28 22:22:53.073 [main] INFO  a.conectores_hibernate.hmarort.Main - Base de datos seleccionada: SQLITE
+2025-02-28 22:22:53.095 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-02-28 22:22:53.228 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@6c0d7c83
+2025-02-28 22:22:53.230 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-02-28 22:22:53.230 [main] INFO  a.c.h.database_config.SQLiteConfig - Iniciando inicialización de base de datos SQLite
+2025-02-28 22:22:53.249 [main] WARN  a.c.h.database_config.SQLiteConfig - Advertencia al ejecutar statement: [SQLITE_ERROR] SQL error or missing database (table Zonas_Envio already exists)
+2025-02-28 22:22:53.250 [main] WARN  a.c.h.database_config.SQLiteConfig - Advertencia al ejecutar statement: [SQLITE_CONSTRAINT_PRIMARYKEY] A PRIMARY KEY constraint failed (UNIQUE constraint failed: Zonas_Envio.id_zona)
+2025-02-28 22:22:53.250 [main] WARN  a.c.h.database_config.SQLiteConfig - Advertencia al ejecutar statement: [SQLITE_CONSTRAINT_PRIMARYKEY] A PRIMARY KEY constraint failed (UNIQUE constraint failed: Clientes.id_cliente)
+2025-02-28 22:22:53.251 [main] INFO  a.c.h.database_config.SQLiteConfig - Base de datos inicializada correctamente
+2025-02-28 22:22:53.254 [main] INFO  a.c.hmarort.ui.UIAutoImpl - [GENERACIÓN AUTOMÁTICA DE DATOS]
+2025-02-28 22:22:53.267 [main] INFO  a.c.hmarort.ui.UIAutoImpl - ✓ Zonas de envío generadas
+2025-02-28 22:22:53.269 [main] INFO  a.c.h.d.i.sqlite.SQLiteDAOCliente - Cliente insertado correctamente con ID: 10
+2025-02-28 22:22:53.269 [main] INFO  a.c.h.d.i.sqlite.SQLiteDAOCliente - Cliente insertado correctamente con ID: 11
+2025-02-28 22:22:53.269 [main] INFO  a.c.h.d.i.sqlite.SQLiteDAOCliente - Cliente insertado correctamente con ID: 12
+2025-02-28 22:22:53.270 [main] INFO  a.c.h.d.i.sqlite.SQLiteDAOCliente - Cliente insertado correctamente con ID: 13
+2025-02-28 22:22:53.270 [main] INFO  a.c.h.d.i.sqlite.SQLiteDAOCliente - Cliente insertado correctamente con ID: 14
+2025-02-28 22:22:53.270 [main] INFO  a.c.hmarort.ui.UIAutoImpl - ✓ Clientes generados
+2025-02-28 22:22:53.274 [main] INFO  a.c.hmarort.ui.UIAutoImpl - ✓ Pedidos generados
+2025-02-28 22:22:53.274 [main] INFO  a.c.hmarort.ui.UIAutoImpl - [INFORME AUTOMÁTICO]
+2025-02-28 22:22:53.276 [main] ERROR a.c.hmarort.ui.UIAutoImpl - Error en la ejecución automática
+java.lang.IllegalArgumentException: El teléfono debe tener 9 dígitos
+	at ad.conectores_hibernate.hmarort.models.Cliente.setTelf(Cliente.java:138)
+	at ad.conectores_hibernate.hmarort.dao.implementacion.sqlite.SQLiteDAOCliente.extraerDesdeResultSet(SQLiteDAOCliente.java:210)
+	at ad.conectores_hibernate.hmarort.dao.implementacion.sqlite.SQLiteDAOCliente.obtenerTodosLosClientes(SQLiteDAOCliente.java:193)
+	at ad.conectores_hibernate.hmarort.ui.UIAutoImpl.generarInformesAutomaticos(UIAutoImpl.java:112)
+	at ad.conectores_hibernate.hmarort.ui.UIAutoImpl.iniciar(UIAutoImpl.java:62)
+	at ad.conectores_hibernate.hmarort.Main.main(Main.java:56)
+2025-02-28 22:22:53.278 [main] ERROR a.c.hmarort.ui.UIAutoImpl - Error en proceso automático: El teléfono debe tener 9 dígitos
+2025-02-28 22:22:53.279 [main] INFO  a.conectores_hibernate.hmarort.Main - Aplicación finalizada exitosamente

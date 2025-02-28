@@ -6,5 +6,6 @@ package ad.conectores_hibernate.hmarort.database_config;
 public enum DatabaseType {
     SQLITE,
     MYSQL,
-    POSTGRESQL
+    POSTGRESQL, 
+    HIBERNATE
 }

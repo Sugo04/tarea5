@@ -46,8 +46,8 @@ public class SQLiteDAOCliente implements DAOCliente {
             stmt.setString(1, cliente.getNombre());
             stmt.setString(2, cliente.getEmail());
             stmt.setString(3, cliente.getTelefono());
-            stmt.setInt(4, cliente.getIdZonaEnvio());
-            stmt.setInt(5, cliente.getId());
+            stmt.setInt(4, cliente.getIdZona());
+            stmt.setInt(5, cliente.getIdCliente());
             
             int filasAfectadas = stmt.executeUpdate();
             if (filasAfectadas == 0) {
@@ -153,7 +153,7 @@ public class SQLiteDAOCliente implements DAOCliente {
             stmt.setString(1, cliente.getNombre());
             stmt.setString(2, cliente.getEmail());
             stmt.setString(3, cliente.getTelefono());
-            stmt.setInt(4, cliente.getIdZonaEnvio());
+            stmt.setInt(4, cliente.getIdZona());
             
             int filasAfectadas = stmt.executeUpdate();
             if (filasAfectadas == 0) {
@@ -163,8 +163,8 @@ public class SQLiteDAOCliente implements DAOCliente {
 
             try (ResultSet generatedKeys = stmt.getGeneratedKeys()) {
                 if (generatedKeys.next()) {
-                    cliente.setId(generatedKeys.getInt(1));
-                    LOGGER.info("Cliente insertado correctamente con ID: {}", cliente.getId());
+                    cliente.setIdCliente(generatedKeys.getInt(1));
+                    LOGGER.info("Cliente insertado correctamente con ID: {}", cliente.getIdCliente());
                 } else {
                     LOGGER.error("Fallo al crear cliente: no se obtuvo ID");
                     throw new Exception("La creación del cliente falló, no se obtuvo el ID.");
@@ -204,11 +204,11 @@ public class SQLiteDAOCliente implements DAOCliente {
      */
     private Cliente extraerDesdeResultSet(ResultSet rs) throws SQLException {
         Cliente cliente = new Cliente();
-        cliente.setId(rs.getInt("id_cliente"));
+        cliente.setIdCliente(rs.getInt("id_cliente"));
         cliente.setNombre(rs.getString("nombre"));
         cliente.setEmail(rs.getString("email"));
         cliente.setTelefono(rs.getString("telefono"));
-        cliente.setIdZonaEnvio(rs.getInt("id_zona"));
+        cliente.setIdZona(rs.getInt("id_zona"));
         return cliente;
     }
 }

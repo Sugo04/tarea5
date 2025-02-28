@@ -1,167 +1,185 @@
 package ad.hibernate.hmarort.models;
-
 import jakarta.persistence.*;
 
 /**
  * Clase que representa un cliente en la base de datos.
+ * 
+ * <p>Esta entidad almacena la información básica de los clientes
+ * como su identificador, nombre, email, teléfono y la zona a la que pertenecen.
+ * Es utilizada para mapear la tabla "Clientes" en la base de datos.</p>
+ * 
+ * @author Sistema de Gestión de Clientes
+ * @version 1.0
+ * @since 2025-02-28
  */
 @Entity
 @Table(name = "Clientes")
 public class Cliente {
+    
+    /**
+     * Identificador único del cliente.
+     * Se genera automáticamente mediante una estrategia de identidad.
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_cliente")
-    private int id_Cliente;
+    private int idCliente;
     
+    /**
+     * Nombre completo del cliente.
+     * Este campo es obligatorio y tiene una longitud máxima de 100 caracteres.
+     */
     @Column(name = "nombre", nullable = false, length = 100)
     private String nombre;
     
+    /**
+     * Dirección de correo electrónico del cliente.
+     * Este campo es obligatorio y tiene una longitud máxima de 100 caracteres.
+     */
     @Column(name = "email", nullable = false, length = 100)
     private String email;
     
-    @Column(name = "telefono", length = 15)
-    private String telf;
-    
-    @Column(name = "id_zona", nullable = false)
-    private int id_zona;
-
     /**
-     * Constructor completo para crear un nuevo cliente.
-     *
-     * @param id_cliente Identificador único del cliente
-     * @param nombre Nombre del cliente
-     * @param email Email del cliente
-     * @param telf Teléfono del cliente
-     * @param id_zona ID de la zona a la que pertenece el cliente
+     * Número de teléfono del cliente.
+     * Tiene una longitud máxima de 15 caracteres y puede ser nulo.
      */
-    public Cliente(int id_cliente, String nombre, String email, String telf, int id_zona) {
-        this.id_Cliente = id_cliente;
+    @Column(name = "telefono", length = 15)
+    private String telefono;
+    
+    /**
+     * Identificador de la zona geográfica a la que pertenece el cliente.
+     * Este campo es obligatorio y hace referencia a la entidad Zona.
+     */
+    @Column(name = "id_zona", nullable = false)
+    private int idZona;
+    
+    /**
+     * Constructor completo para crear un nuevo cliente con todos sus atributos.
+     *
+     * @param idCliente Identificador único del cliente
+     * @param nombre Nombre completo del cliente
+     * @param email Dirección de correo electrónico del cliente
+     * @param telefono Número de teléfono del cliente
+     * @param idZona Identificador de la zona geográfica a la que pertenece el cliente
+     */
+    public Cliente(int idCliente, String nombre, String email, String telefono, int idZona) {
+        this.idCliente = idCliente;
         this.nombre = nombre;
         this.email = email;
-        this.telf = telf;
-        this.id_zona = id_zona;
+        this.telefono = telefono;
+        this.idZona = idZona;
     }
-
+    
     /**
-     * Constructor vacío.
+     * Constructor vacío requerido por JPA.
+     * Inicializa una instancia de Cliente sin asignar valores a sus atributos.
      */
     public Cliente() {
     }
-
+    
     /**
      * Obtiene el identificador único del cliente.
      *
-     * @return Identificador del cliente
+     * @return Identificador único del cliente
      */
-    public int getId_Cliente() {
-        return id_Cliente;
+    public int getIdCliente() {
+        return idCliente;
     }
-
+    
     /**
      * Establece el identificador único del cliente.
      *
      * @param idCliente El nuevo identificador del cliente
      */
-    public void setId_Cliente(int idCliente) {
-        this.id_Cliente = idCliente;
+    public void setIdCliente(int idCliente) {
+        this.idCliente = idCliente;
     }
-
+    
     /**
-     * Obtiene el nombre del cliente.
+     * Obtiene el nombre completo del cliente.
      *
-     * @return Nombre del cliente
+     * @return Nombre completo del cliente
      */
     public String getNombre() {
         return nombre;
     }
-
+    
     /**
-     * Establece el nombre del cliente, validando que no esté vacío y no supere los 100 caracteres.
+     * Establece el nombre del cliente, eliminando espacios en blanco al inicio y al final.
+     * Este valor no debe estar vacío y no debe superar los 100 caracteres.
      *
      * @param nombre El nuevo nombre del cliente
      */
     public void setNombre(String nombre) {
-        if (nombre == null || nombre.trim().isEmpty()) {
-            throw new IllegalArgumentException("El nombre no puede estar vacío");
-        }
-        if (nombre.length() > 100) {
-            throw new IllegalArgumentException("El nombre no puede exceder 100 caracteres");
-        }
         this.nombre = nombre.trim();
     }
-
+    
     /**
-     * Obtiene el email del cliente.
+     * Obtiene la dirección de correo electrónico del cliente.
      *
-     * @return Email del cliente
+     * @return Dirección de correo electrónico del cliente
      */
     public String getEmail() {
         return email;
     }
-
+    
     /**
-     * Establece el email del cliente, validando que no esté vacío y tenga un formato válido.
+     * Establece la dirección de correo electrónico del cliente, eliminando espacios en blanco al inicio y al final.
+     * Este valor no debe estar vacío y debe tener un formato de email válido.
      *
-     * @param email El nuevo email del cliente
+     * @param email La nueva dirección de correo electrónico del cliente
      */
     public void setEmail(String email) {
-        if (email == null || email.trim().isEmpty()) {
-            throw new IllegalArgumentException("El email no puede estar vacío");
-        }
-        if (!email.matches("^[A-Za-z0-9+_.-]+@(.+)$")) {
-            throw new IllegalArgumentException("Formato de email inválido");
-        }
-        if (email.length() > 100) {
-            throw new IllegalArgumentException("El email no puede exceder 100 caracteres");
-        }
         this.email = email.trim();
     }
-
+    
     /**
-     * Obtiene el teléfono del cliente.
+     * Obtiene el número de teléfono del cliente.
      *
-     * @return Teléfono del cliente
+     * @return Número de teléfono del cliente
      */
-    public String getTelf() {
-        return telf;
+    public String getTelefono() {
+        return telefono;
     }
-
+    
     /**
-     * Establece el teléfono del cliente, validando que tenga exactamente 9 dígitos.
+     * Establece el número de teléfono del cliente, eliminando espacios en blanco al inicio y al final.
+     * Idealmente, este valor debe contener 9 dígitos para números de teléfono españoles.
      *
-     * @param telefono El nuevo teléfono del cliente
+     * @param telefono El nuevo número de teléfono del cliente
      */
-    public void setTelf(String telefono) {
+    public void setTelefono(String telefono) {
         if (telefono != null) {
             telefono = telefono.trim();
-            if (!telefono.matches("^[0-9]{9}$")) {
-                throw new IllegalArgumentException("El teléfono debe tener 9 dígitos");
-            }
         }
-        this.telf = telefono;
+        this.telefono = telefono;
     }
-
+    
     /**
-     * Obtiene el ID de la zona a la que pertenece el cliente.
+     * Obtiene el identificador de la zona geográfica a la que pertenece el cliente.
      *
-     * @return ID de la zona
+     * @return Identificador de la zona geográfica
      */
-    public int getId_zona() {
-        return id_zona;
+    public int getIdZona() {
+        return idZona;
     }
-
+    
     /**
-     * Establece el ID de la zona, validando que sea positivo.
+     * Establece el identificador de la zona geográfica a la que pertenece el cliente.
+     * Este valor debe ser un número positivo.
      *
-     * @param idZona El nuevo ID de la zona
+     * @param idZona El nuevo identificador de la zona geográfica
      */
-    public void setId_zona(int idZona) {
-        if (idZona <= 0) {
-            throw new IllegalArgumentException("El ID de zona debe ser positivo");
-        }
-        this.id_zona = idZona;
+    public void setIdZona(int idZona) {
+        this.idZona = idZona;
     }
-
+    
+    /**
+     * Devuelve una representación en forma de cadena de texto del cliente.
+     * La representación incluye el nombre del cliente y su dirección de correo electrónico.
+     *
+     * @return Cadena de texto con el formato "nombre (email)"
+     */
     @Override
     public String toString() {
         return nombre + " (" + email + ")";

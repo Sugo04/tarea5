@@ -1,0 +1,17 @@
+2025-02-28 22:23:04.487 [main] INFO  a.conectores_hibernate.hmarort.Main - Iniciando aplicación de gestión de pedidos
+2025-02-28 22:23:04.490 [main] INFO  a.conectores_hibernate.hmarort.Main - Interfaz seleccionada: AUTO
+2025-02-28 22:23:04.492 [main] INFO  a.conectores_hibernate.hmarort.Main - Base de datos seleccionada: HIBERNATE
+2025-02-28 22:23:04.497 [main] INFO  a.c.hmarort.utils.HibernateUtil - Inicializando SessionFactory de Hibernate
+2025-02-28 22:23:04.572 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-02-28 22:23:04.594 [main] ERROR a.c.hmarort.utils.HibernateUtil - Error al inicializar SessionFactory
+org.hibernate.internal.util.config.ConfigurationException: Could not locate cfg.xml resource [hibernate.cfg.xml]
+	at org.hibernate.boot.cfgxml.internal.ConfigLoader.loadConfigXmlResource(ConfigLoader.java:53)
+	at org.hibernate.boot.registry.StandardServiceRegistryBuilder.configure(StandardServiceRegistryBuilder.java:244)
+	at org.hibernate.cfg.Configuration.configure(Configuration.java:358)
+	at ad.conectores_hibernate.hmarort.utils.HibernateUtil.getSessionFactory(HibernateUtil.java:32)
+	at ad.conectores_hibernate.hmarort.database_config.HibernateConfig.<init>(HibernateConfig.java:44)
+	at ad.conectores_hibernate.hmarort.database_config.DatabaseConfigFactory.createHibernateConfig(DatabaseConfigFactory.java:60)
+	at ad.conectores_hibernate.hmarort.database_config.DatabaseConfigFactory.createConfig(DatabaseConfigFactory.java:19)
+	at ad.conectores_hibernate.hmarort.ui.UIAutoImpl.<init>(UIAutoImpl.java:44)
+	at ad.conectores_hibernate.hmarort.ui.UIFactory.creaUI(UIFactory.java:25)
+	at ad.conectores_hibernate.hmarort.Main.main(Main.java:52)

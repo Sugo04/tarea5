@@ -33,8 +33,8 @@ public class SQLiteDAOZonaEnvio implements DAOZonaEnvio{
              PreparedStatement stmt = conn.prepareStatement(QueryUtil.INSERT_ZONA, 
                      Statement.RETURN_GENERATED_KEYS)) {
             
-            stmt.setString(1, zonaEnvio.getNombre());
-            stmt.setDouble(2, zonaEnvio.getPrecio());
+            stmt.setString(1, zonaEnvio.getNombreZona());
+            stmt.setDouble(2, zonaEnvio.getTarifaEnvio());
             
             int affectedRows = stmt.executeUpdate();
             if (affectedRows == 0) {
@@ -43,7 +43,7 @@ public class SQLiteDAOZonaEnvio implements DAOZonaEnvio{
 
             try (ResultSet generatedKeys = stmt.getGeneratedKeys()) {
                 if (generatedKeys.next()) {
-                    zonaEnvio.setId(generatedKeys.getInt(1));
+                    zonaEnvio.setIdZona((generatedKeys.getInt(1)));
                 } else {
                     throw new Exception("La creación de la zona falló, no se obtuvo el ID.");
                 }
@@ -97,9 +97,9 @@ public class SQLiteDAOZonaEnvio implements DAOZonaEnvio{
         try (Connection conn = databaseConfig.getConnection();
              PreparedStatement stmt = conn.prepareStatement(QueryUtil.UPDATE_ZONA)) {
             
-            stmt.setString(1, zonaEnvio.getNombre());
-            stmt.setDouble(2, zonaEnvio.getPrecio());
-            stmt.setInt(3, zonaEnvio.getId());
+            stmt.setString(1, zonaEnvio.getNombreZona());
+            stmt.setDouble(2, zonaEnvio.getTarifaEnvio());
+            stmt.setInt(3, zonaEnvio.getIdZona());
             
             int affectedRows = stmt.executeUpdate();
             if (affectedRows == 0) {
@@ -133,9 +133,9 @@ public class SQLiteDAOZonaEnvio implements DAOZonaEnvio{
      */
     private ZonaEnvio extractZonaFromResultSet(ResultSet rs) throws SQLException {
         ZonaEnvio zona = new ZonaEnvio();
-        zona.setId(rs.getInt("id_zona"));
-        zona.setNombre(rs.getString("nombre_zona"));
-        zona.setPrecio(rs.getDouble("tarifa_envio"));
+        zona.setIdZona(rs.getInt("id_zona"));
+        zona.setNombreZona(rs.getString("nombre_zona"));
+        zona.setTarifaEnvio(rs.getDouble("tarifa_envio"));
         return zona;
     }
 }

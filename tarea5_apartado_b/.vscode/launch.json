@@ -3,18 +3,35 @@
     "configurations": [
         {
             "type": "java",
-            "name": "Auto Mode Debug",
+            "name": "Auto Mode Debug (SQLite)",
             "request": "launch",
-            "mainClass": "ad.hibernate.hmarort.Main",
-            "projectName": "tarea5_apartado_a"
+            "mainClass": "ad.conectores_hibernate.hmarort.Main",
+            "projectName": "tarea5_apartado_b",
+            "args": ["-i", "AUTO", "-db", "sqlite"]
         },
         {
             "type": "java",
-            "name": "Manual Mode Debug",
+            "name": "Auto Mode Debug (Hibernate)",
             "request": "launch",
-            "mainClass": "ad.gestion_pedidos.hmarort.Main",
-            "projectName": "grestion_pedidos",
-            "args": ["manual"]
+            "mainClass": "ad.conectores_hibernate.hmarort.Main",
+            "projectName": "tarea5_apartado_b",
+            "args": ["-i", "AUTO", "-db", "hibernate"]
+        },
+        {
+            "type": "java",
+            "name": "Manual Mode Debug (SQLite)",
+            "request": "launch",
+            "mainClass": "ad.conectores_hibernate.hmarort.Main",
+            "projectName": "tarea5_apartado_b",
+            "args": ["-i", "MANUAL", "-db", "sqlite"]
+        },
+        {
+            "type": "java",
+            "name": "Manual Mode Debug (Hibernate)",
+            "request": "launch",
+            "mainClass": "ad.conectores_hibernate.hmarort.Main",
+            "projectName": "tarea5_apartado_b",
+            "args": ["-i", "MANUAL", "-db", "hibernate"]
         }
     ]
 }

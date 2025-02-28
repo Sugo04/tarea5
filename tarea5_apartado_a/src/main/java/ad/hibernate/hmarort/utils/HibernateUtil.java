@@ -1,3 +1,7 @@
+/**
+ * Clase de utilidad para manejar la {@code SessionFactory} de Hibernate.
+ * Implementa el patrón Singleton para garantizar una única instancia de {@code SessionFactory}.
+ */
 package ad.hibernate.hmarort.utils;
 
 import org.hibernate.SessionFactory;
@@ -5,12 +9,16 @@ import org.hibernate.cfg.Configuration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * Clase de utilidad para manejar la SessionFactory de Hibernate.
- * Implementa el patrón Singleton para garantizar una única instancia de SessionFactory.
- */
 public class HibernateUtil {
+    
+    /**
+     * Logger para registrar eventos y errores relacionados con la inicialización de Hibernate.
+     */
     private static final Logger logger = LoggerFactory.getLogger(HibernateUtil.class);
+    
+    /**
+     * Única instancia de {@code SessionFactory} utilizada en la aplicación.
+     */
     private static SessionFactory sessionFactory;
 
     /**
@@ -20,9 +28,10 @@ public class HibernateUtil {
     }
 
     /**
-     * Obtiene la única instancia de SessionFactory, creándola si no existe.
+     * Obtiene la única instancia de {@code SessionFactory}, creándola si no existe.
      *
-     * @return SessionFactory una instancia de SessionFactory
+     * @return una instancia única de {@code SessionFactory}.
+     * @throws ExceptionInInitializerError si ocurre un error durante la inicialización de Hibernate.
      */
     public static synchronized SessionFactory getSessionFactory() {
         if (sessionFactory == null) {
@@ -41,7 +50,8 @@ public class HibernateUtil {
     }
 
     /**
-     * Cierra la SessionFactory.
+     * Cierra la {@code SessionFactory} si está abierta.
+     * Se recomienda llamar a este método al finalizar la aplicación para liberar recursos.
      */
     public static void shutdown() {
         if (sessionFactory != null && !sessionFactory.isClosed()) {

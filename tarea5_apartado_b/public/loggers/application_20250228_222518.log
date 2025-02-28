@@ -1,0 +1,192 @@
+2025-02-28 22:25:18.157 [main] INFO  a.conectores_hibernate.hmarort.Main - Iniciando aplicación de gestión de pedidos
+2025-02-28 22:25:18.160 [main] INFO  a.conectores_hibernate.hmarort.Main - Interfaz seleccionada: AUTO
+2025-02-28 22:25:18.162 [main] INFO  a.conectores_hibernate.hmarort.Main - Base de datos seleccionada: SQLITE
+2025-02-28 22:25:18.177 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-02-28 22:25:18.300 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@6c0d7c83
+2025-02-28 22:25:18.302 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-02-28 22:25:18.302 [main] INFO  a.c.h.database_config.SQLiteConfig - Iniciando inicialización de base de datos SQLite
+2025-02-28 22:25:18.322 [main] WARN  a.c.h.database_config.SQLiteConfig - Advertencia al ejecutar statement: [SQLITE_ERROR] SQL error or missing database (table Zonas_Envio already exists)
+2025-02-28 22:25:18.322 [main] WARN  a.c.h.database_config.SQLiteConfig - Advertencia al ejecutar statement: [SQLITE_CONSTRAINT_PRIMARYKEY] A PRIMARY KEY constraint failed (UNIQUE constraint failed: Zonas_Envio.id_zona)
+2025-02-28 22:25:18.322 [main] WARN  a.c.h.database_config.SQLiteConfig - Advertencia al ejecutar statement: [SQLITE_CONSTRAINT_PRIMARYKEY] A PRIMARY KEY constraint failed (UNIQUE constraint failed: Clientes.id_cliente)
+2025-02-28 22:25:18.323 [main] INFO  a.c.h.database_config.SQLiteConfig - Base de datos inicializada correctamente
+2025-02-28 22:25:18.326 [main] INFO  a.c.hmarort.ui.UIAutoImpl - [GENERACIÓN AUTOMÁTICA DE DATOS]
+2025-02-28 22:25:18.336 [main] INFO  a.c.hmarort.ui.UIAutoImpl - ✓ Zonas de envío generadas
+2025-02-28 22:25:18.340 [main] INFO  a.c.h.d.i.sqlite.SQLiteDAOCliente - Cliente insertado correctamente con ID: 30
+2025-02-28 22:25:18.341 [main] INFO  a.c.h.d.i.sqlite.SQLiteDAOCliente - Cliente insertado correctamente con ID: 31
+2025-02-28 22:25:18.341 [main] INFO  a.c.h.d.i.sqlite.SQLiteDAOCliente - Cliente insertado correctamente con ID: 32
+2025-02-28 22:25:18.341 [main] INFO  a.c.h.d.i.sqlite.SQLiteDAOCliente - Cliente insertado correctamente con ID: 33
+2025-02-28 22:25:18.341 [main] INFO  a.c.h.d.i.sqlite.SQLiteDAOCliente - Cliente insertado correctamente con ID: 34
+2025-02-28 22:25:18.341 [main] INFO  a.c.hmarort.ui.UIAutoImpl - ✓ Clientes generados
+2025-02-28 22:25:18.345 [main] INFO  a.c.hmarort.ui.UIAutoImpl - ✓ Pedidos generados
+2025-02-28 22:25:18.345 [main] INFO  a.c.hmarort.ui.UIAutoImpl - [INFORME AUTOMÁTICO]
+2025-02-28 22:25:18.349 [main] INFO  a.c.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 22:25:18.350 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Nombre: Ana López
+2025-02-28 22:25:18.350 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Pedidos: 0
+2025-02-28 22:25:18.350 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Facturado: 0.0 €
+2025-02-28 22:25:18.350 [main] INFO  a.c.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 22:25:18.350 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Nombre: Carlos Pérez
+2025-02-28 22:25:18.350 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Pedidos: 0
+2025-02-28 22:25:18.351 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Facturado: 0.0 €
+2025-02-28 22:25:18.351 [main] INFO  a.c.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 22:25:18.351 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Nombre: Beatriz Gómez
+2025-02-28 22:25:18.351 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Pedidos: 0
+2025-02-28 22:25:18.351 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Facturado: 0.0 €
+2025-02-28 22:25:18.352 [main] INFO  a.c.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 22:25:18.352 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Nombre: David Martín
+2025-02-28 22:25:18.352 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Pedidos: 0
+2025-02-28 22:25:18.352 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Facturado: 0.0 €
+2025-02-28 22:25:18.355 [main] INFO  a.c.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 22:25:18.355 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Nombre: Cliente 1
+2025-02-28 22:25:18.355 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Pedidos: 1
+2025-02-28 22:25:18.355 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Facturado: 99.10044807105302 €
+2025-02-28 22:25:18.356 [main] INFO  a.c.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 22:25:18.356 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Nombre: Cliente 2
+2025-02-28 22:25:18.356 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Pedidos: 1
+2025-02-28 22:25:18.356 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Facturado: 235.98959380654335 €
+2025-02-28 22:25:18.357 [main] INFO  a.c.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 22:25:18.357 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Nombre: Cliente 3
+2025-02-28 22:25:18.357 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Pedidos: 2
+2025-02-28 22:25:18.357 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Facturado: 421.71925590306137 €
+2025-02-28 22:25:18.357 [main] INFO  a.c.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 22:25:18.357 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Nombre: Cliente 4
+2025-02-28 22:25:18.357 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Pedidos: 1
+2025-02-28 22:25:18.357 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Facturado: 89.59437440732978 €
+2025-02-28 22:25:18.359 [main] INFO  a.c.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 22:25:18.359 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Nombre: Cliente 5
+2025-02-28 22:25:18.359 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Pedidos: 3
+2025-02-28 22:25:18.359 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Facturado: 634.5187223959829 €
+2025-02-28 22:25:18.359 [main] INFO  a.c.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 22:25:18.360 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Nombre: Cliente 1
+2025-02-28 22:25:18.360 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Pedidos: 3
+2025-02-28 22:25:18.360 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Facturado: 772.3927434302834 €
+2025-02-28 22:25:18.360 [main] INFO  a.c.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 22:25:18.360 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Nombre: Cliente 2
+2025-02-28 22:25:18.361 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Pedidos: 1
+2025-02-28 22:25:18.361 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Facturado: 115.4325144864475 €
+2025-02-28 22:25:18.361 [main] INFO  a.c.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 22:25:18.361 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Nombre: Cliente 3
+2025-02-28 22:25:18.361 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Pedidos: 3
+2025-02-28 22:25:18.361 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Facturado: 515.2114173020349 €
+2025-02-28 22:25:18.362 [main] INFO  a.c.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 22:25:18.362 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Nombre: Cliente 4
+2025-02-28 22:25:18.362 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Pedidos: 3
+2025-02-28 22:25:18.362 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Facturado: 769.2735789941623 €
+2025-02-28 22:25:18.363 [main] INFO  a.c.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 22:25:18.363 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Nombre: Cliente 5
+2025-02-28 22:25:18.363 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Pedidos: 2
+2025-02-28 22:25:18.363 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Facturado: 734.3580292161082 €
+2025-02-28 22:25:18.363 [main] INFO  a.c.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 22:25:18.363 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Nombre: Cliente 1
+2025-02-28 22:25:18.363 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Pedidos: 2
+2025-02-28 22:25:18.363 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Facturado: 360.82181792768677 €
+2025-02-28 22:25:18.365 [main] INFO  a.c.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 22:25:18.365 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Nombre: Cliente 2
+2025-02-28 22:25:18.365 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Pedidos: 2
+2025-02-28 22:25:18.365 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Facturado: 395.44982044651726 €
+2025-02-28 22:25:18.366 [main] INFO  a.c.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 22:25:18.366 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Nombre: Cliente 3
+2025-02-28 22:25:18.366 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Pedidos: 1
+2025-02-28 22:25:18.366 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Facturado: 454.41191196247905 €
+2025-02-28 22:25:18.366 [main] INFO  a.c.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 22:25:18.366 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Nombre: Cliente 4
+2025-02-28 22:25:18.367 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Pedidos: 2
+2025-02-28 22:25:18.367 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Facturado: 264.580799413729 €
+2025-02-28 22:25:18.367 [main] INFO  a.c.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 22:25:18.367 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Nombre: Cliente 5
+2025-02-28 22:25:18.367 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Pedidos: 2
+2025-02-28 22:25:18.367 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Facturado: 312.3307066933712 €
+2025-02-28 22:25:18.368 [main] INFO  a.c.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 22:25:18.368 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Nombre: Cliente 1
+2025-02-28 22:25:18.368 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Pedidos: 1
+2025-02-28 22:25:18.368 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Facturado: 259.7159178555189 €
+2025-02-28 22:25:18.368 [main] INFO  a.c.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 22:25:18.369 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Nombre: Cliente 2
+2025-02-28 22:25:18.369 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Pedidos: 2
+2025-02-28 22:25:18.369 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Facturado: 337.05735944571177 €
+2025-02-28 22:25:18.369 [main] INFO  a.c.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 22:25:18.369 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Nombre: Cliente 3
+2025-02-28 22:25:18.369 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Pedidos: 2
+2025-02-28 22:25:18.369 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Facturado: 793.0363733376003 €
+2025-02-28 22:25:18.370 [main] INFO  a.c.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 22:25:18.370 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Nombre: Cliente 4
+2025-02-28 22:25:18.370 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Pedidos: 1
+2025-02-28 22:25:18.370 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Facturado: 149.32943505790246 €
+2025-02-28 22:25:18.371 [main] INFO  a.c.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 22:25:18.371 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Nombre: Cliente 5
+2025-02-28 22:25:18.371 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Pedidos: 2
+2025-02-28 22:25:18.371 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Facturado: 462.64060336741727 €
+2025-02-28 22:25:18.371 [main] INFO  a.c.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 22:25:18.371 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Nombre: Cliente 1
+2025-02-28 22:25:18.371 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Pedidos: 3
+2025-02-28 22:25:18.371 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Facturado: 1064.17637149191 €
+2025-02-28 22:25:18.372 [main] INFO  a.c.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 22:25:18.372 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Nombre: Cliente 2
+2025-02-28 22:25:18.372 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Pedidos: 3
+2025-02-28 22:25:18.373 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Facturado: 1076.46534149624 €
+2025-02-28 22:25:18.373 [main] INFO  a.c.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 22:25:18.373 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Nombre: Cliente 3
+2025-02-28 22:25:18.373 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Pedidos: 3
+2025-02-28 22:25:18.374 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Facturado: 1108.2519667902366 €
+2025-02-28 22:25:18.374 [main] INFO  a.c.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 22:25:18.374 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Nombre: Cliente 4
+2025-02-28 22:25:18.374 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Pedidos: 1
+2025-02-28 22:25:18.374 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Facturado: 172.0901054294988 €
+2025-02-28 22:25:18.375 [main] INFO  a.c.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 22:25:18.375 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Nombre: Cliente 5
+2025-02-28 22:25:18.375 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Pedidos: 3
+2025-02-28 22:25:18.375 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Facturado: 561.3173166356859 €
+2025-02-28 22:25:18.375 [main] INFO  a.c.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 22:25:18.375 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Nombre: Cliente 1
+2025-02-28 22:25:18.375 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Pedidos: 1
+2025-02-28 22:25:18.375 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Facturado: 251.11276448394597 €
+2025-02-28 22:25:18.376 [main] INFO  a.c.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 22:25:18.376 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Nombre: Cliente 2
+2025-02-28 22:25:18.376 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Pedidos: 2
+2025-02-28 22:25:18.376 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Facturado: 703.6283695808997 €
+2025-02-28 22:25:18.376 [main] INFO  a.c.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 22:25:18.376 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Nombre: Cliente 3
+2025-02-28 22:25:18.378 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Pedidos: 1
+2025-02-28 22:25:18.378 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Facturado: 367.4550573418805 €
+2025-02-28 22:25:18.378 [main] INFO  a.c.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 22:25:18.378 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Nombre: Cliente 4
+2025-02-28 22:25:18.378 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Pedidos: 3
+2025-02-28 22:25:18.378 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Facturado: 896.1881803958964 €
+2025-02-28 22:25:18.379 [main] INFO  a.c.hmarort.ui.UIAutoImpl - 
+--- Resumen Cliente ---
+2025-02-28 22:25:18.379 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Nombre: Cliente 5
+2025-02-28 22:25:18.379 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Pedidos: 1
+2025-02-28 22:25:18.379 [main] INFO  a.c.hmarort.ui.UIAutoImpl - Total Facturado: 74.42417565161429 €
+2025-02-28 22:25:18.379 [main] INFO  a.conectores_hibernate.hmarort.Main - Aplicación finalizada exitosamente

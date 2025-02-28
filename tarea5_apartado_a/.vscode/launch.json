@@ -12,8 +12,8 @@
             "type": "java",
             "name": "Manual Mode Debug",
             "request": "launch",
-            "mainClass": "ad.hibernate.hmarort.Main",
-            "projectName": "tarea5_apartado_a",
+            "mainClass": "ad.gestion_pedidos.hmarort.Main",
+            "projectName": "grestion_pedidos",
             "args": ["manual"]
         }
     ]

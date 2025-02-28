@@ -1,0 +1,19 @@
+2025-02-28 22:28:51.826 [main] INFO  a.conectores_hibernate.hmarort.Main - Iniciando aplicación de gestión de pedidos
+2025-02-28 22:28:51.832 [main] INFO  a.conectores_hibernate.hmarort.Main - Interfaz seleccionada: MANUAL
+2025-02-28 22:28:51.834 [main] INFO  a.conectores_hibernate.hmarort.Main - Base de datos seleccionada: SQLITE
+2025-02-28 22:28:51.855 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-02-28 22:28:52.016 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@6c0d7c83
+2025-02-28 22:28:52.019 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-02-28 22:28:52.019 [main] INFO  a.c.h.database_config.SQLiteConfig - Iniciando inicialización de base de datos SQLite
+2025-02-28 22:28:52.039 [main] WARN  a.c.h.database_config.SQLiteConfig - Advertencia al ejecutar statement: [SQLITE_ERROR] SQL error or missing database (table Zonas_Envio already exists)
+2025-02-28 22:28:52.041 [main] WARN  a.c.h.database_config.SQLiteConfig - Advertencia al ejecutar statement: [SQLITE_CONSTRAINT_PRIMARYKEY] A PRIMARY KEY constraint failed (UNIQUE constraint failed: Zonas_Envio.id_zona)
+2025-02-28 22:28:52.041 [main] WARN  a.c.h.database_config.SQLiteConfig - Advertencia al ejecutar statement: [SQLITE_CONSTRAINT_PRIMARYKEY] A PRIMARY KEY constraint failed (UNIQUE constraint failed: Clientes.id_cliente)
+2025-02-28 22:28:52.041 [main] INFO  a.c.h.database_config.SQLiteConfig - Base de datos inicializada correctamente
+2025-02-28 22:29:13.582 [main] ERROR a.c.hmarort.ui.UIManualImpl - Error en la interfaz manual
+java.lang.IllegalArgumentException: Formato de email inválido
+	at ad.conectores_hibernate.hmarort.models.Cliente.setEmail(Cliente.java:112)
+	at ad.conectores_hibernate.hmarort.ui.UIManualImpl.modificarCliente(UIManualImpl.java:167)
+	at ad.conectores_hibernate.hmarort.ui.UIManualImpl.gestionarClientes(UIManualImpl.java:117)
+	at ad.conectores_hibernate.hmarort.ui.UIManualImpl.iniciar(UIManualImpl.java:62)
+	at ad.conectores_hibernate.hmarort.Main.main(Main.java:56)
+2025-02-28 22:29:18.078 [main] INFO  a.conectores_hibernate.hmarort.Main - Aplicación finalizada exitosamente

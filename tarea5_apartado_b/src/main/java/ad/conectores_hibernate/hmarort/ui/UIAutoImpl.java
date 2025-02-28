@@ -6,6 +6,9 @@ import java.util.Random;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import ad.conectores_hibernate.hmarort.dao.interfaces.DAOCliente;
 import ad.conectores_hibernate.hmarort.dao.interfaces.DAOPedido;
 import ad.conectores_hibernate.hmarort.dao.interfaces.DAOZonaEnvio;
@@ -19,11 +22,11 @@ import ad.conectores_hibernate.hmarort.models.Pedido;
 import ad.conectores_hibernate.hmarort.models.ZonaEnvio;
 
 /**
- * Implementación automática de la interfaz de usuario que genera datos de
- * prueba
- * y realiza operaciones automáticamente.
+ * Implementación automática de la interfaz de usuario que genera datos de prueba.
  */
 public class UIAutoImpl implements UI {
+    private static final Logger logger = LoggerFactory.getLogger(UIAutoImpl.class);
+
     private DAOCliente daoCliente;
     private DAOPedido daoPedido;
     private DAOZonaEnvio daoZonaEnvio;
@@ -33,18 +36,19 @@ public class UIAutoImpl implements UI {
     /**
      * Constructor que inicializa la configuración de la base de datos y los DAOs.
      */
-    public UIAutoImpl() {
+    public UIAutoImpl(DatabaseType typ) {
         DatabaseProperties properties = new DatabaseProperties.Builder()
                 .url("src/main/resources/pedidos.db")
                 .build();
 
-        dbConfig = DatabaseConfigFactory.createConfig(DatabaseType.SQLITE, properties);
+        dbConfig = DatabaseConfigFactory.createConfig(typ, properties);
 
-        DAOFactory factory = DAOFactory.getDAOFactory(DatabaseType.SQLITE, dbConfig);
+        DAOFactory factory = DAOFactory.getDAOFactory(typ,dbConfig);
 
         daoCliente = factory.createClienteDAO();
         daoPedido = factory.createPedidoDAO();
         daoZonaEnvio = factory.createZonaEnvioDAO();
+        
         random = new Random();
     }
 
@@ -57,18 +61,13 @@ public class UIAutoImpl implements UI {
             generarDatosAutomaticos();
             generarInformesAutomaticos();
         } catch (Exception e) {
+            logger.error("Error en la ejecución automática", e);
             mostrarError("Error en proceso automático: " + e.getMessage());
         }
     }
 
-    /**
-     * Genera datos de prueba automáticamente incluyendo zonas de envío, clientes y
-     * pedidos.
-     * 
-     * @throws Exception Si ocurre un error durante la generación de datos
-     */
     private void generarDatosAutomaticos() throws Exception {
-        System.out.println("\n[GENERACIÓN AUTOMÁTICA DE DATOS]");
+        logger.info("[GENERACIÓN AUTOMÁTICA DE DATOS]");
 
         // Generar zonas de envío
         List<ZonaEnvio> zonas = IntStream.range(1, 4)
@@ -78,7 +77,7 @@ public class UIAutoImpl implements UI {
         for (ZonaEnvio zona : zonas) {
             daoZonaEnvio.agregarZonaEnvio(zona);
         }
-        System.out.println("✓ Zonas de envío generadas");
+        logger.info("✓ Zonas de envío generadas");
 
         // Generar clientes
         List<Cliente> clientes = IntStream.range(1, 6)
@@ -86,13 +85,13 @@ public class UIAutoImpl implements UI {
                         "Cliente " + i,
                         "cliente" + i + "@example.com",
                         "123456789" + i,
-                        zonas.get(random.nextInt(zonas.size())).getId()))
+                        zonas.get(random.nextInt(zonas.size())).getIdZona()))
                 .collect(Collectors.toList());
 
         for (Cliente cliente : clientes) {
             daoCliente.agregarCliente(cliente);
         }
-        System.out.println("✓ Clientes generados");
+        logger.info("✓ Clientes generados");
 
         // Generar pedidos
         for (Cliente cliente : clientes) {
@@ -101,87 +100,46 @@ public class UIAutoImpl implements UI {
                 Pedido pedido = new Pedido(0,
                         LocalDate.now().minusDays(random.nextInt(30)),
                         random.nextDouble(50, 500),
-                        cliente.getId());
+                        cliente.getIdCliente());
                 daoPedido.agregarPedido(pedido);
             }
         }
-        System.out.println("✓ Pedidos generados");
+        logger.info("✓ Pedidos generados");
     }
 
-    /**
-     * Genera informes automáticos mostrando resúmenes de clientes y sus pedidos.
-     * 
-     * @throws Exception Si ocurre un error durante la generación de informes
-     */
     private void generarInformesAutomaticos() throws Exception {
-        System.out.println("\n[INFORME AUTOMÁTICO]");
+        logger.info("[INFORME AUTOMÁTICO]");
         List<Cliente> clientes = daoCliente.obtenerTodosLosClientes();
 
         for (Cliente cliente : clientes) {
-            List<Pedido> pedidos = daoPedido.obtenerPedidosPorCliente(cliente.getId());
-            double totalFacturado = daoCliente.calcularFacturacionTotalCliente(cliente.getId());
+            List<Pedido> pedidos = daoPedido.obtenerPedidosPorCliente(cliente.getIdCliente());
+            double totalFacturado = daoCliente.calcularFacturacionTotalCliente(cliente.getIdCliente());
 
-            System.out.println("\n--- Resumen Cliente ---");
-            System.out.println("Nombre: " + cliente.getNombre());
-            System.out.println("Total Pedidos: " + pedidos.size());
-            System.out.printf("Total Facturado: %.2f €\n", totalFacturado);
-
-            System.out.println("Detalle de Pedidos:");
-            pedidos.forEach(p -> System.out.printf(
-                    "  • Pedido %d: %s - %.2f €\n",
-                    p.getId(), p.getFecha(), p.getImporte()));
+            logger.info("\n--- Resumen Cliente ---");
+            logger.info("Nombre: {}", cliente.getNombre());
+            logger.info("Total Pedidos: {}", pedidos.size());
+            logger.info("Total Facturado: {} €", totalFacturado);
         }
     }
 
-    /**
-     * Como no lo usamos hacemos que devuelva 0
-     */
     @Override
-    public int mostrarMenu() {
-        return 0;
-    }
+    public int mostrarMenu() { return 0; }
 
-    /**
-     * Como no lo usamos hacemos que no haga nada
-     */
     @Override
-    public void gestionarClientes() {
-    }
+    public void gestionarClientes() {}
 
-    /**
-     * Como no lo usamos hacemos que no haga nada
-     */
     @Override
-    public void gestionarPedidos() {
-    }
+    public void gestionarPedidos() {}
 
-    /**
-     * Como no lo usamos hacemos que no haga nada
-     */
     @Override
-    public void consultarZonasEnvio() throws Exception {
-    }
+    public void consultarZonasEnvio() throws Exception {}
 
-    /**
-     * Como no lo usamos hacemos que no haga nada
-     */
     @Override
-    public void consultarPedidosCliente() throws Exception {
-    }
+    public void consultarPedidosCliente() throws Exception {}
 
-    /**
-     * Muestra un mensaje en la consola.
-     */
     @Override
-    public void mostrarMensaje(String mensaje) {
-        System.out.println(mensaje);
-    }
+    public void mostrarMensaje(String mensaje) { logger.info(mensaje); }
 
-    /**
-     * Muestra un mensaje de error en la consola.
-     */
     @Override
-    public void mostrarError(String mensaje) {
-        System.err.println(mensaje);
-    }
+    public void mostrarError(String mensaje) { logger.error(mensaje); }
 }

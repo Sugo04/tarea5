@@ -1,0 +1,7 @@
+2025-02-28 22:16:57.953 [main] INFO  a.conectores_hibernate.hmarort.Main - Iniciando aplicación de gestión de pedidos
+2025-02-28 22:16:57.959 [main] INFO  a.conectores_hibernate.hmarort.Main - Interfaz seleccionada: automatica
+2025-02-28 22:16:57.961 [main] INFO  a.conectores_hibernate.hmarort.Main - Base de datos seleccionada: SQLITE
+2025-02-28 22:16:57.962 [main] ERROR a.conectores_hibernate.hmarort.Main - Error fatal en la aplicación
+java.lang.IllegalArgumentException: Tipo de UI no soportado: automatica
+	at ad.conectores_hibernate.hmarort.ui.UIFactory.creaUI(UIFactory.java:27)
+	at ad.conectores_hibernate.hmarort.Main.main(Main.java:52)

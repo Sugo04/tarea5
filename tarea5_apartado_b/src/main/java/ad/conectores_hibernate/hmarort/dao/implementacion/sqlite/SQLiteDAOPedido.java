@@ -40,7 +40,7 @@ public class SQLiteDAOPedido implements DAOPedido {
                         Statement.RETURN_GENERATED_KEYS)) {
 
             stmt.setDate(1, Date.valueOf(pedido.getFecha()));
-            stmt.setDouble(2, pedido.getImporte());
+            stmt.setDouble(2, pedido.getImporteTotal());
             stmt.setInt(3, pedido.getIdCliente());
 
             int affectedRows = stmt.executeUpdate();
@@ -50,7 +50,7 @@ public class SQLiteDAOPedido implements DAOPedido {
 
             try (ResultSet generatedKeys = stmt.getGeneratedKeys()) {
                 if (generatedKeys.next()) {
-                    pedido.setId(generatedKeys.getInt(1));
+                    pedido.setIdPedido((generatedKeys.getInt(1)));
                 } else {
                     throw new Exception("La creación del pedido falló, no se obtuvo el ID.");
                 }
@@ -109,9 +109,9 @@ public class SQLiteDAOPedido implements DAOPedido {
                 PreparedStatement stmt = conn.prepareStatement(QueryUtil.UPDATE_PEDIDO)) {
 
             stmt.setDate(1, Date.valueOf(pedido.getFecha()));
-            stmt.setDouble(2, pedido.getImporte());
+            stmt.setDouble(2, pedido.getImporteTotal());
             stmt.setInt(3, pedido.getIdCliente());
-            stmt.setInt(4, pedido.getId());
+            stmt.setInt(4, pedido.getIdPedido());
 
             int affectedRows = stmt.executeUpdate();
             if (affectedRows == 0) {
@@ -210,9 +210,9 @@ public class SQLiteDAOPedido implements DAOPedido {
      */
     private Pedido extractPedidoFromResultSet(ResultSet rs) throws Exception {
         Pedido pedido = new Pedido();
-        pedido.setId(rs.getInt("id_pedido"));
+        pedido.setIdPedido(rs.getInt("id_pedido"));
         pedido.setFecha(rs.getDate("fecha").toLocalDate());
-        pedido.setImporte(rs.getDouble("importe_total"));
+        pedido.setImporteTotal(rs.getDouble("importe_total"));
         pedido.setIdCliente(rs.getInt("id_cliente"));
         return pedido;
     }

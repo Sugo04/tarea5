@@ -56,6 +56,7 @@ public interface DatabaseConfig {
     static DatabaseConfig forType(DatabaseType type, String url, String username, String password) {
         return switch (type) {
             case SQLITE -> new SQLiteConfig(url);
+            case HIBERNATE -> new HibernateConfig(url);
             case MYSQL -> throw new UnsupportedOperationException("MySQL not implemented yet");
             case POSTGRESQL -> throw new UnsupportedOperationException("PostgreSQL not implemented yet");
         };

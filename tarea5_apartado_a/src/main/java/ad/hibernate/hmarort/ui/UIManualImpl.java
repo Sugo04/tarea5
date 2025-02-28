@@ -168,7 +168,7 @@ public class UIManualImpl implements UI {
         System.out.print("Nuevo teléfono (enter para mantener actual): ");
         String telefono = scanner.nextLine();
         if (!telefono.isEmpty())
-            cliente.setTelf(telefono);
+            cliente.setTelefono(telefono);
 
         daoCliente.actualizarInformacionCliente(cliente);
         mostrarMensaje("Cliente modificado exitosamente");
@@ -194,7 +194,7 @@ public class UIManualImpl implements UI {
     private void listarClientes() throws Exception {
         List<Cliente> clientes = daoCliente.obtenerTodosLosClientes();
         clientes.forEach(c -> System.out.println(
-                "ID: " + c.getId_Cliente() +
+                "ID: " + c.getIdCliente() +
                         ", Nombre: " + c.getNombre() +
                         ", Email: " + c.getEmail()));
     }

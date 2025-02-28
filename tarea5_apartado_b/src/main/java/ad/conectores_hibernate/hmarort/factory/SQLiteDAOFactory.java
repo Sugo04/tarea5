@@ -24,7 +24,7 @@ public class SQLiteDAOFactory extends DAOFactory{
      */
     @Override
     public DAOCliente createClienteDAO() {
-        return new SQLiteDAOCliente(this.dbConfig);
+        return new SQLiteDAOCliente(this.databaseConfig);
     }
 
     /**
@@ -33,7 +33,7 @@ public class SQLiteDAOFactory extends DAOFactory{
      */
     @Override
     public DAOPedido createPedidoDAO() {
-        return new SQLiteDAOPedido(this.dbConfig);
+        return new SQLiteDAOPedido(this.databaseConfig);
     }
 
     /**
@@ -42,6 +42,6 @@ public class SQLiteDAOFactory extends DAOFactory{
      */
     @Override
     public DAOZonaEnvio createZonaEnvioDAO() {
-        return new SQLiteDAOZonaEnvio(this.dbConfig);
+        return new SQLiteDAOZonaEnvio(this.databaseConfig);
     }
 }

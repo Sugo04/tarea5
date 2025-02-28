@@ -1,0 +1,14 @@
+2025-02-28 22:17:26.071 [main] INFO  a.conectores_hibernate.hmarort.Main - Iniciando aplicación de gestión de pedidos
+2025-02-28 22:17:26.077 [main] INFO  a.conectores_hibernate.hmarort.Main - Interfaz seleccionada: AUTO
+2025-02-28 22:17:26.080 [main] INFO  a.conectores_hibernate.hmarort.Main - Base de datos seleccionada: SQLITE
+2025-02-28 22:17:26.100 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-02-28 22:17:26.233 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@6c0d7c83
+2025-02-28 22:17:26.235 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-02-28 22:17:26.236 [main] INFO  a.c.h.database_config.SQLiteConfig - Iniciando inicialización de base de datos SQLite
+2025-02-28 22:17:26.242 [main] INFO  a.c.h.database_config.SQLiteConfig - Base de datos inicializada correctamente
+2025-02-28 22:17:26.259 [main] ERROR a.conectores_hibernate.hmarort.Main - Error fatal en la aplicación
+java.lang.NullPointerException: Cannot invoke "ad.conectores_hibernate.hmarort.database_config.DatabaseType.ordinal()" because "dbType" is null
+	at ad.conectores_hibernate.hmarort.factory.DAOFactory.getDAOFactory(DAOFactory.java:37)
+	at ad.conectores_hibernate.hmarort.ui.UIAutoImpl.<init>(UIAutoImpl.java:46)
+	at ad.conectores_hibernate.hmarort.ui.UIFactory.creaUI(UIFactory.java:25)
+	at ad.conectores_hibernate.hmarort.Main.main(Main.java:52)

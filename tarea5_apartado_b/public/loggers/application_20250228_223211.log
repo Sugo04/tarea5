@@ -1,0 +1,26 @@
+2025-02-28 22:32:11.194 [main] INFO  a.conectores_hibernate.hmarort.Main - Iniciando aplicación de gestión de pedidos
+2025-02-28 22:32:11.198 [main] INFO  a.conectores_hibernate.hmarort.Main - Interfaz seleccionada: MANUAL
+2025-02-28 22:32:11.200 [main] INFO  a.conectores_hibernate.hmarort.Main - Base de datos seleccionada: HIBERNATE
+2025-02-28 22:32:11.203 [main] INFO  a.c.hmarort.utils.HibernateUtil - Inicializando SessionFactory de Hibernate
+2025-02-28 22:32:11.278 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-02-28 22:32:11.516 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-02-28 22:32:11.649 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-02-28 22:32:11.654 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.sqlite.JDBC
+2025-02-28 22:32:11.655 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:sqlite:src/main/resources/pedidos.db]
+2025-02-28 22:32:11.655 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {}
+2025-02-28 22:32:11.655 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2025-02-28 22:32:11.657 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 20 (min=1)
+2025-02-28 22:32:12.825 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5eb87338] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2025-02-28 22:32:12.839 [main] INFO  a.c.hmarort.utils.HibernateUtil - SessionFactory inicializada correctamente
+2025-02-28 22:32:12.839 [main] INFO  a.c.h.d.HibernateConfig - Configuración de Hibernate inicializada
+2025-02-28 22:32:12.844 [main] INFO  a.c.hmarort.utils.SessionManager - Inicializando SessionFactory de Hibernate
+2025-02-28 22:32:12.865 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-02-28 22:32:12.871 [main] WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-02-28 22:32:12.872 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Loaded JDBC driver class: org.sqlite.JDBC
+2025-02-28 22:32:12.872 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001012: Connecting with JDBC URL [jdbc:sqlite:src/main/resources/pedidos.db]
+2025-02-28 22:32:12.872 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {}
+2025-02-28 22:32:12.873 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2025-02-28 22:32:12.873 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001115: Connection pool size: 20 (min=1)
+2025-02-28 22:32:12.931 [main] INFO  o.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1c7f9861] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2025-02-28 22:32:12.936 [main] INFO  a.c.hmarort.utils.SessionManager - SessionFactory inicializada correctamente
+2025-02-28 22:32:19.662 [main] INFO  a.conectores_hibernate.hmarort.Main - Aplicación finalizada exitosamente

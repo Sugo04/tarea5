@@ -99,7 +99,7 @@ public class UIAutoImpl implements UI {
                 Pedido pedido = new Pedido(0,
                         LocalDate.now().minusDays(random.nextInt(30)),
                         random.nextDouble(50, 500),
-                        cliente.getId_Cliente());
+                        cliente.getIdCliente());
                 daoPedido.agregarPedido(pedido);
             }
         }
@@ -111,8 +111,8 @@ public class UIAutoImpl implements UI {
         List<Cliente> clientes = daoCliente.obtenerTodosLosClientes();
 
         for (Cliente cliente : clientes) {
-            List<Pedido> pedidos = daoPedido.obtenerPedidosPorCliente(cliente.getId_Cliente());
-            double totalFacturado = daoCliente.calcularFacturacionTotalCliente(cliente.getId_Cliente());
+            List<Pedido> pedidos = daoPedido.obtenerPedidosPorCliente(cliente.getIdCliente());
+            double totalFacturado = daoCliente.calcularFacturacionTotalCliente(cliente.getIdCliente());
 
             logger.info("\n--- Resumen Cliente ---");
             logger.info("Nombre: {}", cliente.getNombre());
